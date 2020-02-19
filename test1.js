@@ -1,3 +1,5 @@
+
+
 function returnXpRate(skillName) {
     var currentLevel = getCurrentLevel();
     var xpRate = 1;
@@ -172,7 +174,7 @@ function writeAllValues(skillName) {
     
     var xpRequired = numberWithCommas(betweenTwoLevels(getCurrentLevel(), requiredLevel));
     
-    document.getElementsByTagName("p")[0].innerHTML="Train " + skillName + " to level " + requiredLevel + " for " + task;
+    document.getElementsByTagName("p")[0].innerHTML="Train " + skillName + " to level " +"<span style='background-color:#447050; color:white; font-weight:bold; padding:2px; border-radius:6px;'>"+ requiredLevel+"</span>" + " for " + task;
     
     document.getElementsByTagName("p")[1].innerHTML="EXP required: " + xpRequired;
     
