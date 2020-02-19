@@ -8,9 +8,6 @@
 
 <style>
     
-    * {
-        border: 1px solid black;
-    }
     
     
     body {
@@ -19,7 +16,7 @@
     }
     
     #main {
-        border:2px solid yellow;
+
     }
 
     #app {
@@ -28,6 +25,7 @@
         border: 1px solid black;
         float:left;
         width:40vw;
+        margin-top:10px;
     
     }   
 
@@ -35,6 +33,10 @@
         background-color:#e2dbc8;
         font-size:32px;
         opacity:0.65;
+        margin-left:10px;
+        margin-right:10px;
+        border-radius:5px;
+        padding:10px;
     }
 
     #nav {
@@ -81,11 +83,12 @@
     #skills-panel {
         background-color:#93795e;
         border-radius: 3px;
-        border:2px solid blue;
         width:30vw;
         max-width:35vw;
-        height:60vh;
+        height:80vh;
         display:inline-block;
+                margin-top:10px;
+
         
     }
 
@@ -118,6 +121,11 @@
         width:100%;
         margin-left:1%;
 */
+    }
+    
+        
+    #level {
+        margin-top:10px;
     }
     
     
@@ -203,6 +211,9 @@ Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPres
 <button id="enter-button" onclick="calculateAllSkills()">
     ALL SKILLS
 </button>
+    
+    
+<p style="background-color:white;">How To Use: Enter your current level in the text-field above, then click on a skill icon.</p>
 
 </div>
 
