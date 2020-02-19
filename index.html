@@ -1,553 +1,33 @@
 <!DOCTYPE html>
 <html>
     
-<!--
-<script src="C:\Users\Hunter\Desktop\osrs calc\test1.js">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+    
+<script src="C:\Users\Hunter\Desktop\calc test website\test1.js">
 </script>
--->
-    
-    <script>
-    
-    function calculateAllSkills() {
-    var arrayThatHoldsAllLevels = [];
-    var i;
-    for (i = 0; i < listOfSkills.length; i++) {
-        var skill = listOfSkills[i];
-        arrayThatHoldsAllLevels[i] = mainProgram(skill);
-    }
-    alert(arrayThatHoldsAllLevels);
-}
-
-
-
-function clickedHelp() {
-    alert("Enter a number from 1-99, and then click on a skill icon to the right to display the next closest Quest or Achievement Diary requirement for that skill. \n\n If you want to see all closest requirements for that level, click the ALL SKILLS button.")
-}
-
-function clickedContact() {
-    alert("WHy do you want to talk to me?!????!")
-}
-
-
-function increaseBy5() {
-    var currentLevel = Number(document.getElementById("level").value);
-    currentLevel = currentLevel + 5;
-    document.getElementById("level").value = currentLevel;
-
-}
-
-function increaseBy1() {
-    var currentLevel = Number(document.getElementById("level").value);
-    currentLevel = currentLevel + 1;
-    document.getElementById("level").value = currentLevel;
-
-}
-
-function getSkill(skillName) {
-    
-    //var skillName = document.getElementById("skills-panel").value;
-    var levelsList = [];
-    
-    if (skillName == "Agility") {                       // decide which skill to use 
-        levelsList = agilityList;
-    } else if (skillName == "Attack") {
-        levelsList = attackList;
-    } else if (skillName == "Construction") {
-        levelsList = constructionList;
-    } else if (skillName == "Cooking") {
-        levelsList = cookingList;
-    } else if (skillName == "Crafting") {
-        levelsList = craftingList;
-    } else if (skillName == "Defence") {
-        levelsList = defenceList;
-    } else if (skillName == "Farming") {
-        levelsList = farmingList;
-    } else if (skillName == "Firemaking") {
-        levelsList = firemakingList;
-    } else if (skillName == "Fishing") {
-        levelsList = fishingList;
-    } else if (skillName == "Fletching") {
-        levelsList = fletchingList;
-    } else if (skillName == "Herblore") {
-        levelsList = herbloreList;
-    } else if (skillName == "Hitpoints") {
-        levelsList = hitpointsList;
-    }  else if (skillName == "Hunter") {
-        levelsList = hunterList;
-    }   else if (skillName == "Magic") {
-        levelsList = magicList;
-    } else if (skillName == "Mining") {
-        levelsList = miningList;
-    } else if (skillName == "Prayer") {
-        levelsList = prayerList;
-    } else if (skillName == "Ranged") {
-        levelsList = rangedList;
-    } else if (skillName == "Runecraft") {
-        levelsList = runecraftList;
-    } else if (skillName == "Slayer") {
-        levelsList = slayerList;
-    } else if (skillName == "Smithing") {
-        levelsList = smithingList;
-    } else if (skillName == "Strength") {
-        levelsList = strengthList;
-    } else if (skillName == "Thieving") {
-        levelsList = thievingList;
-    } else if (skillName == "Woodcutting") {
-        levelsList = woodcuttingList;
-    }
-
-	return levelsList;
-}
-
-
-function mainProgram(s) {
-    var currentLevel = document.getElementById("level").value;
-    //var skillName = document.getElementById("skills-list").value;
-    var skillName = s;
-    
-    var requiredLevel;
-	var i;
-    var levelsList = getSkill(s);
-    
-	for (i = 0; i < levelsList.length; i++) {
-        levelsListIndex = levelsList[i]
-        levelsListTupleIndex0 = levelsListIndex[0];     // skill-level
-        levelsListTupleIndex1 = levelsListIndex[1];     // task name
-
-        if (currentLevel < levelsListTupleIndex0) {
-        requiredLevel = levelsListTupleIndex0;
-        task = levelsListTupleIndex1;
-		break;
-        }
-    }  
-    
-    document.getElementsByTagName("p")[0].innerHTML="Train " + skillName + " to level " + requiredLevel + " for " + task;
-    betweenTwoLevels(currentLevel, requiredLevel);
-    return ["Train "+skillName+" to level "+requiredLevel+" for "+task + "\n"];
-    
-}
-
-
-
-function calculateXP(targetLevel)
-{
-    var i;
-    var sum = 0;
-
-    for (i = 1; i <= targetLevel - 1; ++i) {
-        var x = i;
-        sum += Math.floor((300.0 * (Math.pow(2.0, (x / 7.0))) + x));
-    }
-    sum /= 4;
-    sum = Math.floor(sum);
-    return sum;
-
-}
-
-function betweenTwoLevels(requiredLevel, currentLevel) {
-    var result = (calculateXP(currentLevel) - calculateXP(requiredLevel));
-    result = numberWithCommas(result);
-    document.getElementsByTagName("p")[1].innerHTML="EXP required: " + result;
-}
-
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-8
-
-function whenEnterPressed(event){
-                if (event.keyCode == 13 || event.which == 13){
-                    mainProgram();
-                }
-            }
-
-
-
-var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
-                        , "Defence", "Farming", "Firemaking", "Fishing", "Fletching", "Herblore", "Hunter", "Magic", "Mining", "Prayer", "Ranged", "Runecraft", "Slayer"
-                        , "Smithing", "Strength", "Thieving", "Woodcutting"];
-
-    // LIST BEGIN OF ALL SKILLS AND TASKS
-
-    // AGILITY
-
-    p1 = [10, "The Dig Site"];
-    p2 = [13, "The Lost Tribe"];
-    p3 = [15, "Haunted Mine"];
-    p4 = [15, "Tai Bwo Wannai Trio"];
-    p5 = [15, "Troll Stronghold"];
-    p6 = [18, "The Depths of Despair"];
-    p7 = [20, "Mountain Daughter"];
-    p8 = [23, "Death to the Dorgeshuun"];
-    p9 = [25, "Ghosts Ahoy"];
-    p10 = [25, "The Grand Tree"];
-    p11 = [25, "In Search of the Myreque"];
-    p12 = [25, "Watchtower"];
-    p13 = [26, "Darkness of Hallowvale"];
-    p14 = [28, "Troll Romance"];
-    p15 = [30, "Cold War"];
-    p16 = [32, "Shilo Village"];
-    p17 = [35, "Horror from the Deep"];
-    p18 = [36, "One Small Favour"];
-    p19 = [40, "The Fremennik Isles"];
-    p20 = [40, "Royal Trouble"];
-    p21= [42, "Cabin Fever"];
-    p22 = [48, "Recipe for Disaster - Awowogei subquest"];
-    p23 = [50, "Legend's Quest"];
-    p24 = [55, "Monkey Madness II"];
-    p25 = [56, "Regicide"];
-    p26 = [59, "Grim Tales"];
-    p27 = [60, "Dragon Slayer II"];
-    p28 = [68, "Making Friends with My Arm"];
-    p29 = [70, "Song of the Elves"];
-    p30 = [99, "Skillcape"];
-
-    var agilityList = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30];
-    agilityList = agilityList.sort();
-
-    // ATTACK 
-
-    p31 = [15, "Another slice of HAM"];
-    p32 = [20, "Holy Grail"];
-    p33 = [40, "A Taste of Hope"];
-    p34 = [42, "Western Provinces - Elite"];
-    p35 = [50, "Another slice of HAM"];
-    p36 = [99, "Skillcape"];
-
-    var attackList = [p31,p32,p33,p34,p35,p36];
-    attackList = attackList.sort();
-
-
-	// CONSTRUCTION
-    p37 = [5, "Darkness of Hallowvale"];
-    p38 = [5, "The Eyes of Glouphrie"];
-    p39 = [10, "Tower of Life"];
-    p40 = [20, "The Fremennik Isles"];
-    p41 = [30, "The Great Brain Robbery"];
-    p42 = [34, "Cold War"];
-    p43 = [35, "Making Friends with My Arm"];
-    p44 = [50, "Dragon Slayer II"];
-    p45 = [70, "Song of the Elves"];
-
-    var constructionList = [p37,p38,p39,p40,p41,p42,p43,p44,p45];
-    constructionList = constructionList.sort();
-
-    // COOKING 
-
-    var cookingList = [
-        [10, "Recipe for Disaster - Beginning"],
-        [20, "Ghosts Ahoy"],
-        [22, "Forgettable Tale of a Drunken Dwarf"],
-        [25, "Recipe for Disaster - Evil Dave subquest"],
-        [30, "Big Chompy Bird Hunting"],
-        [30, "Tai Bwo Wannai Trio"],
-        [31, "Recipe for Disaster - Pirate Pete "],
-        [40, "Recipe for Disaster - Lumbridge Guide subquest"],
-        [41, "Recipe for Disaster - Skrach Uglogwee subquest"],
-        [53, "Heroes' Quest*"],
-        [62, "Swan Song"],
-        [70, "Recipe for Disaster - Awowogei subquest*"],
-        [99, "Skillcape"]
-    ].sort();
-
-
-    // CRAFTING 
-
-    var craftingList = [
-        [10,"Observatory Quest"],
-        [12,"The Giant Dwarf"],
-        [16,"The Great Brain Robbery"],
-        [19,"Animal Magnetism"],
-        [20,"Creature of Fenkenstrain"],
-        [20,"Elemental Workshop I"],
-        [20,"The Golem"],
-        [20,"Shades of Mort'ton"],
-        [20,"Shilo Village"],
-        [20,"Tears of Guthix"],
-        [25,"In Aid of the Myreque"],
-        [25,"One Small Favour"],
-        [30,"Cold War"],
-        [30,"Shadow of the Storm"],
-        [30,"Slug Menace"],
-        [31,"Lost City*"],
-        [32,"Darkness of Hallowvale"],
-        [35,"Haunted Mine"],
-        [36,"Enlightened Journey"],
-        [40,"Family Crest"],
-        [40, "The Fremennik Trials*"],
-        [40,"Swan Song"],
-        [42,"Rum Deal"],
-        [45,"Cabin Fever"],
-        [46,"The Fremennik Isles"],
-        [48,"A Taste of Hope"],
-        [49,"The Hand in the Sand"],
-        [50,"Enakhra's Lament"],
-        [50,"Legends' Quest"],
-        [61,"Lunar Diplomacy"],
-        [62, "Dragon Slayer II"],
-        [65, "The Fremennik Exiles"],
-        [70,"Monkey Madness II"],
-        [99, "Skillcape"]
-    ].sort();
-
-    // DEFENCE
-
-    var defenceList = [
-        [20,"Rag and Bone Man II"],
-        [30,"Between a Rock..."],
-        [40,"Lunar Diplomacy"],
-        [65,"King's Ransom"],
-        [99, "Skillcape"]
-    ].sort();
-
-    // FARMING 
-    var farmingList = [
-        [17,"Forgettable Tale of a Drunken Dwarf"],
-        [25,"Garden of Tranquillity"],
-        [29,"My Arm's Big Adventure"],
-        [30,"Enlightened Journey"],
-        [40,"Rum Deal*"],
-        [45,"Grim Tales*"],
-        [49,"Fairytale II - Cure a Queen*"],
-        [70,"Song of the Elves"],
-        [99, "Skillcape"]
-    ].sort();
-
-    // FIREAMKING
-    var firemakingList = [
-        [5,"Shades of Mort'ton"],
-        [16,"The Giant Dwarf"],
-        [20,"Enlightened Journey"],
-        [20,"Recipe for Disaster - Skrach Uglogwee subquest"],
-        [30,"Sea Slug"],
-        [40,"Olaf's Quest"],
-        [42,"Swan Song"],
-        [45,"Enakhra's Lament"],
-        [49,"Lunar Diplomacy"],
-        [49,"Tears of Guthix"],
-        [50,"Desert Treasure"],
-        [60,"Monkey Madness II*"],
-        [66,"Making Friends with My Arm"],
-        [99, "Skillcape"]
-    ].sort();
-
-    // FISHING
-    var fishingList = [
-        [5,"Tai Bwo Wannai Trio"],
-        [10,"Fishing Contest"],
-        [50,"Rum Deal*"],
-        [53,"Heroes' Quest*"],
-        [60,"The Fremennik Exiles"],
-        [62,"Swan Song*"],
-        [99, "Skillcape (provides unlimited teleports to either the Fishing Guild or Otto's Grotto)"]
-    ].sort();
-
-    var fletchingList = [
-        [5,"Big Chompy Bird Hunting"],
-        [10,"The Tourist Trap"],
-        [25,"The Fremennik Trials*"],
-        [30,"Zogre Flesh Eaters"],
-        [50,"Devious Minds"],
-        [99, "Skillcape"]
-    ].sort();
-
-    var herbloreList = [
-        [3,"Jungle Potion"],
-        [5,"Lunar Diplomacy"],
-        [8,"Zogre Flesh Eaters"],
-        [10,"The Dig Site"],
-        [14,"Watchtower"],
-        [15,"Shades of Mort'ton"],
-        [18,"One Small Favour"],
-        [25,"Heroes' Quest*"],
-        [31,"Eadgar's Ruse"],
-        [45,"Legends' Quest"],
-        [52,"Grim Tales*"],
-        [57,"Fairytale II - Cure a Queen*"],
-        [70,"Song of the Elves"],
-        [99, "Skillcape"]
-    ].sort();
-
-    var hitpointsList = [[50,"Dragon Slayer II"], [99, "Skillcape"]];
-
-    var hunterList = [
-        [10,"Cold War"],
-        [12,"The Ascent of Arceuus"],
-        [27,"Eagles' Peak"],
-        [60,"Monkey Madness II"],
-        [70," Song of the Elves"],
-        [99, "Skillcape"]
-    ].sort();
-
-    var magicList = [
-        [7,"In Aid of the Myreque"],
-        [15,"Watchtower"],
-        [20,"Elemental Workshop II"],
-        [33,"Darkness of Hallowvale"],
-        [33,"The Giant Dwarf"],
-        [33,"Spirits of the Elid*"],
-        [39,"Enakhra's Lament"],
-        [45,"King's Ransom"],
-        [46,"The Eyes of Glouphrie"],
-        [50,"Desert Treasure"],
-        [56,"Legends' Quest"],
-        [59,"Family Crest*"],
-        [65,"Lunar Diplomacy"],
-        [66,"Swan Song*"],
-        [75,"Dragon Slayer II"],
-        [99, "Skillcape"]
-    ].sort();
-
-    var miningList = [
-        [10,"The Knight's Sword"],
-        [15,"In Aid of the Myreque"],
-        [17,"The Lost Tribe"],
-        [20,"Darkness of Hallowvale"],
-        [20,"Elemental Workshop I"],
-        [20,"Tears of Guthix"],
-        [37,"Spirits of the Elid"],
-        [40,"Between a Rock...*"],
-        [40,"Family Crest"],
-        [40,"Watchtower*"],
-        [50,"Heroes' Quest*"],
-        [52,"Legends' Quest*"],
-        [60,"Lunar Diplomacy"],
-        [68,"Dragon Slayer II"],
-        [70,"Song of the Elves"],
-        [72,"Making Friends with My Arm*"],
-        [99, "Skillcape"]
-    ].sort();
-
-    var prayerList = [
-        [25, "Another Slice of H.A.M."],
-        [31,"Scorpion Catcher"],
-        [42,"Legends' Quest"],
-        [43,"Enakhra's Lament"],
-        [47,"Rum Deal*"],
-        [50,"The Great Brain Robbery"],
-        [99,"Skillcape"]
-    ].sort();
-
-    var rangedList = [
-        [25,"Underground Pass"],
-        [30,"Animal Magnetism"],
-        [30,"Big Chompy Bird Hunting"],
-        [30,"Zogre Flesh Eaters"],
-        [37,"Spirits of the Elid*"],
-        [40,"Cabin Fever"],
-        [40,"Temple of Ikov"],
-        [60,"Mourning's End Part I"],
-        [99, "Skillcape"]
-    ].sort();
-
-    var runecraftList = [
-        [13,"The Eyes of Glouphrie"],
-        [30,"The Slug Menace"],
-        [35,"What Lies Below"],
-        [50,"Devious Minds"],
-        [55,"The Fremennik Exiles"],
-        [99,"Skillcape"]
-    ].sort();
-
-    var slayerList = [
-        [10,"Desert Treasure"],
-        [18,"Animal Magnetism"],
-        [30,"The Slug Menace"],
-        [38,"A Taste of Hope"],
-        [40,"Rag and Bone Man II"],
-        [40,"Royal Trouble"],
-        [42,"Rum Deal"],
-        [60,"The Fremennik Exiles"],
-        [69,"Monkey Madness II"],
-        [99,"Skillcape"]
-    ].sort();
-
-    var smithingList = [
-        [4,"Zogre Flesh Eaters"],
-        [20,"Elemental Workshop I"],
-        [20,"The Tourist Trap"],
-        [30,"Elemental Workshop II"],
-        [30,"One Small Favour"],
-        [40,"Family Crest"],
-        [45,"Swan Song"],
-        [50,"Between a Rock...*"],
-        [50,"Cabin Fever"],
-        [50,"Legends' Quest"],
-        [60,"The Fremennik Exiles"],
-        [65,"Devious Minds*"],
-        [70,"Dragon Slayer II"],
-        [70,"Song of the Elves"],
-        [99,"Skillcape"]
-    ].sort();
-
-    var strengthList = [
-        [20,"Zogre Flesh Eaters"],
-        [40,"Darkness of Hallowvale"],
-        [50,"Legends' Quest"],
-        [99,"Skillcape"]
-    ].sort();
-
-    var thievingList = [
-        [13,"The Lost Tribe"],
-        [14,"The Giant Dwarf"],
-        [15,"Cold War"],
-        [15,"Watchtower"],
-        [17,"The Hand in the Sand"],
-        [21,"Tribal Totem"],
-        [22,"Darkness of Hallowvale"],
-        [23,"Death to the Dorgeshuun"],
-        [25,"Creature of Fenkenstrain"],
-        [25,"The Dig Site"],
-        [25,"The Golem"],
-        [30,"The Feud"],
-        [30,"The Slug Menace"],
-        [37,"Spirits of the Elid*"],
-        [40,"Fairytale II - Cure a Queen"],
-        [42,"Temple of Ikov"],
-        [50,"Legends' Quest"],
-        [50,"Mourning's End Part I"],
-        [53,"Desert Treasure"],
-        [55,"Monkey Madness II"],
-        [58,"Grim Tales*"],
-        [60,"Dragon Slayer II"],
-        [99,"Skillcape"]
-    ].sort();
-
-    var woodcuttingList = [
-        [10,"My Arm's Big Adventure"],
-        [35,"Animal Magnetism"],
-        [36,"Lost City"],
-        [40,"The Fremennik Trials"],
-        [50,"Legends' Quest"],
-        [50,"Olaf's Quest"],
-        [55,"Lunar Diplomacy"],
-        [56,"The Fremennik Isles"],
-        [70,"Song of the Elves"],
-        [71,"Grim Tales*"],
-        [99, "Skillcape"]
-    ].sort();
-    </script>
 
 <style>
+    
+    * {
+        border: 1px solid black;
+    }
     
     
     body {
         font-family:Arial;
         background-color:#c0a886;
     }
+    
+    #main {
+        border:2px solid yellow;
+    }
 
     #app {
-       background-color:#d8ccb4; 
-       margin-left: 10px;
-        margin-top:10px;
-        width:45vw;
-        height:75vh;
+       background-color:#d8ccb4;
         border-radius: 3px;
-        padding:5px;
         border: 1px solid black;
-        display:inline-block;
+        float:left;
+        width:40vw;
     
     }   
 
@@ -559,7 +39,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
 
     #nav {
         margin-left: auto;
-        margin-right: auto;
+        margin-right: 11%;
         height:8vh;
         width:75vw;
         background-color:#d8ccb4;
@@ -585,7 +65,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     }
     
     #contact {
-float:right;
+        float:right;
     }
     
 
@@ -599,16 +79,14 @@ float:right;
     }
 
     #skills-panel {
-        margin-top:20px;
         background-color:#93795e;
-        max-width:450px;
-        float:right;
-        margin-right: 5px;
-        width:45vw;
-        height:75vh;
         border-radius: 3px;
+        border:2px solid blue;
+        width:30vw;
+        max-width:35vw;
+        height:60vh;
         display:inline-block;
-        border:1px solid black;
+        
     }
 
    tr {
@@ -634,9 +112,12 @@ float:right;
     }
     
     img:active {
+        filter:invert(1);
+/*
         height:100%;
         width:100%;
         margin-left:1%;
+*/
     }
     
     
@@ -655,7 +136,10 @@ float:right;
     
     <li id="contact" onclick="clickedContact()"><a>Contact</a></li>
 </ul>
-
+    
+    
+<div id="main">
+    
 <div id="app">
     
     
@@ -690,7 +174,7 @@ float:right;
     
     
 
-Current Level: <input type="text" id="level" placeholder="1" onkeypress="whenEnterPressed(event)">
+Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPressed(event)">
     
     
 <input type="button" value="+1" onclick="increaseBy1()"> 
@@ -703,11 +187,11 @@ Current Level: <input type="text" id="level" placeholder="1" onkeypress="whenEnt
     
     
 
-<p>Enter a level and then click a skill icon.</p>
+<p>Choose a skill to begin</p>
 
 <p>EXP required: </p>
 
-<p>Estimated TTL: </p>
+<p id="TTL">Estimated TTL: </p>
     
 
 <!--
@@ -729,58 +213,58 @@ Current Level: <input type="text" id="level" placeholder="1" onkeypress="whenEnt
 <table>
 
 <tr>
-   <td id="Attack" onclick="mainProgram(this.id)"><img src="https://vignette.wikia.nocookie.net/2007scape/images/f/fe/Attack_icon.png/revision/latest?cb=20180424002328"</td> 
+   <td id="Attack" onclick="writeAllValues(this.id)"><img src="https://vignette.wikia.nocookie.net/2007scape/images/f/fe/Attack_icon.png/revision/latest?cb=20180424002328"</td> 
     
-   <td id="Hitpoints" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/9/96/Hitpoints_icon.png?a4819"</td>  
+   <td id="Hitpoints" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/9/96/Hitpoints_icon.png?a4819"</td>  
        
-   <td id="Mining" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/4/4a/Mining_icon.png?00870"</td> 
+   <td id="Mining" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/4/4a/Mining_icon.png?00870"</td> 
 </tr>
     <tr>
-   <td id="Strength" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/1/1b/Strength_icon.png?e6e0c"</td> 
+   <td id="Strength" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/1/1b/Strength_icon.png?e6e0c"</td> 
     
-   <td id="Agility" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/8/86/Agility_icon.png?22e10"</td>  
+   <td id="Agility" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/8/86/Agility_icon.png?22e10"</td>  
        
-   <td id="Smithing" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/d/dd/Smithing_icon.png?d26c5"</td> 
+   <td id="Smithing" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/d/dd/Smithing_icon.png?d26c5"</td> 
 </tr>
     <tr>
-   <td id="Defence" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/b/b7/Defence_icon.png?ca0cd"</td> 
+   <td id="Defence" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/b/b7/Defence_icon.png?ca0cd"</td> 
     
-   <td id="Herblore" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/0/03/Herblore_icon.png?ffa9e"</td>  
+   <td id="Herblore" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/0/03/Herblore_icon.png?ffa9e"</td>  
        
-   <td id="Fishing" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/3/3b/Fishing_icon.png?15a98"</td>  
+   <td id="Fishing" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/3/3b/Fishing_icon.png?15a98"</td>  
 </tr>
     <tr>
-   <td id="Ranged" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/1/19/Ranged_icon.png?01b0e"</td> 
+   <td id="Ranged" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/1/19/Ranged_icon.png?01b0e"</td> 
     
-   <td id="Thieving" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/4/4a/Thieving_icon.png?56b20"</td>  
+   <td id="Thieving" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/4/4a/Thieving_icon.png?56b20"</td>  
        
-   <td id="Cooking" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/d/dc/Cooking_icon.png?a0156"</td>  
+   <td id="Cooking" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/d/dc/Cooking_icon.png?a0156"</td>  
 </tr>
     <tr>
-   <td id="Prayer" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/f/f2/Prayer_icon.png?ca0dc"</td> 
+   <td id="Prayer" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/f/f2/Prayer_icon.png?ca0dc"</td> 
     
-   <td id="Crafting" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/c/cf/Crafting_icon.png?a1f71"</td>  
+   <td id="Crafting" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/c/cf/Crafting_icon.png?a1f71"</td>  
        
-   <td id="Firemaking" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/9/9b/Firemaking_icon.png?45ea0"</td> 
+   <td id="Firemaking" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/9/9b/Firemaking_icon.png?45ea0"</td> 
 </tr>
     <tr>
-   <td id="Magic" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/5/5c/Magic_icon.png?334cf"</td> 
+   <td id="Magic" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/5/5c/Magic_icon.png?334cf"</td> 
     
-   <td id="Fletching" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/9/93/Fletching_icon.png?15cda"</td>  
+   <td id="Fletching" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/9/93/Fletching_icon.png?15cda"</td>  
        
-   <td id="Woodcutting" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/f/f4/Woodcutting_icon.png?6ead4"</td> 
+   <td id="Woodcutting" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/f/f4/Woodcutting_icon.png?6ead4"</td> 
 </tr>
     <tr>
-   <td id="Runecraft" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/6/63/Runecraft_icon.png?c278c"</td> 
+   <td id="Runecraft" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/6/63/Runecraft_icon.png?c278c"</td> 
     
-   <td id="Slayer" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/2/28/Slayer_icon.png?cd34f"</td>  
+   <td id="Slayer" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/2/28/Slayer_icon.png?cd34f"</td>  
        
-   <td id="Farming" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/f/fc/Farming_icon.png?558fa"</td> 
+   <td id="Farming" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/f/fc/Farming_icon.png?558fa"</td> 
 </tr>
     <tr>
-   <td id="Construction" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/f/f6/Construction_icon.png?f9bf7"</td> 
+   <td id="Construction" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/f/f6/Construction_icon.png?f9bf7"</td> 
     
-   <td id="Hunter" onclick="mainProgram(this.id)"><img src="https://oldschool.runescape.wiki/images/d/dd/Hunter_icon.png?8762f"</td>  
+   <td id="Hunter" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/d/dd/Hunter_icon.png?8762f"</td>  
        
 <!--   <td id="Mining" onclick="mainProgram(this.id)"><img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ikRjFyvcOiJg/v1/1000x-1.jpg"</td> -->
 </tr>
@@ -789,6 +273,7 @@ Current Level: <input type="text" id="level" placeholder="1" onkeypress="whenEnt
 </table>
 
 </div>
+    </div>
 
 
 </html>
