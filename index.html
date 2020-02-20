@@ -136,7 +136,17 @@
         height:3em;
         font-size:1.2em;
     }
+
     
+input[type='checkbox'] {
+    position:relative;
+    width:100%;
+    height:100%;;
+    display:;
+    border-radius:5px;
+    border:2px solid #555;
+    z-index: 1;
+}
     
     
     
@@ -250,7 +260,11 @@ Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPres
 <table>
 
 <tr>
-    <td id="Attack" onclick="writeAllValues(this.id)"><img src="https://vignette.wikia.nocookie.net/2007scape/images/f/fe/Attack_icon.png/revision/latest?cb=20180424002328"></td> 
+    <td id="Attack" onclick="writeAllValues(this.id)">
+    
+        <img src="https://vignette.wikia.nocookie.net/2007scape/images/f/fe/Attack_icon.png/revision/latest?cb=20180424002328">
+    
+    </td> 
     
    <td id="Hitpoints" onclick="writeAllValues(this.id)"><img src="https://oldschool.runescape.wiki/images/9/96/Hitpoints_icon.png?a4819"></td>  
        
