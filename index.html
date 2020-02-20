@@ -8,9 +8,7 @@
 
 <style>
     
-    * {
-        border:1px solid white;
-    }
+
     
     
     body {
@@ -29,14 +27,14 @@
        background-color:#d8ccb4;
         border-radius: 3px;
         border: 1px solid black;
-        margin-top:10px;
+        width:100%;
 
     
     }   
 
     p {
         background-color:#e2dbc8;
-        font-size:32px;
+        font-size:1.5em;
         margin-left:10px;
         margin-right:10px;
         border-radius:5px;
@@ -59,20 +57,23 @@
         padding:0px;
     }
 
-    li {
-        opacity:0.65;
-        font-size:25px;
+
+    
+    #help, #contact {
+        width:33%;
+        text-align:center
+    }
+    
+    #help:hover, #contact:hover{
+        background-color:floralwhite;
+    }
+    
+    #obama {
+        width:100%;
         height:100%;
-        display:inline-block;
     }
     
-    #help {
-        float:left;
-    }
-    
-    #contact {
-        float:right;
-    }
+
     
 
     li:hover {
@@ -82,14 +83,16 @@
     a {
         
         margin:auto;
+        font-size:2em;
     }
 
     #skills-panel {
         background-color:#93795e;
         border-radius: 3px;
-        margin-top:10px;
         
-        height:50vh;
+        height:90%;
+        width:75%;
+        margin:auto;
 
         
     }
@@ -101,8 +104,12 @@
     
     td {
         border: 1px solid black;
+        text-align:center;
         
     }
+    
+    
+    
 
     table {
         width:100%;
@@ -112,7 +119,7 @@
     img {
         height:50%;
         width:50%;
-        margin-left:20%;
+
 
     }
     
@@ -125,6 +132,13 @@
         margin-top:10px;
     }
     
+    .yo {
+        width:33%;
+        padding:1%;
+    }
+    
+    
+    
     
     
 
@@ -133,18 +147,33 @@
 
 <body>
     
-<ul id="nav">
-    <li id="help" onclick="clickedHelp()"><a>Help</a></li>
     
-    <li id="Obama">
-        <img src="https://www.biography.com/.image/t_share/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg" style="width:100px; height:8vh;">
-    </li>
+<table id="nav">
+
+<tbody>
     
-    <li id="contact" onclick="clickedContact()"><a>Contact</a></li>
-</ul>
+    <tr>
+    <td id="help" onclick="clickedHelp()"><a>Help</a></td>
+    
+    <td>
+        <img src="https://www.biography.com/.image/t_share/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg" style="width:100px; height:8vh;" id="obama" />
+    </td>
+    
+    <td id="contact" onclick="clickedContact()"><a>Contact</a></li>
+    </td>
+    
+    </tbody>    
+    
+</table>
     
     
+<table>
+    <thead>
+    </thead>
     
+   <tbody> 
+       <tr>
+           <td class="yo">
 <div id="app">
     
 <!--
@@ -197,7 +226,9 @@ Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPres
 <p style="background-color:white;">How To Use: Enter your current level in the text-field above, then click on a skill icon.</p>
 
 </div>
-
+           </td>
+           
+           <td class="yo">
 <div id="skills-panel">
 
 <table>
@@ -263,6 +294,18 @@ Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPres
 </table>
 
 </div>
-
+           </td>
+           
+           <td class="yo">
+           coming soon !
+           </td>
+           
+       </tr>
+    </tbody>
+    
+</table>    
+    
+    
+    
     </body>
 </html>
