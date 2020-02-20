@@ -8,14 +8,20 @@
 
 <style>
     
+    * {
+        border:1px solid white;
+    }
     
     
     body {
         font-family:Arial;
         background-color:#c0a886;
+        width:100%;
+        height:100%;
     }
     
     #main {
+        border:1px solid white;
 
     }
 
@@ -23,9 +29,8 @@
        background-color:#d8ccb4;
         border-radius: 3px;
         border: 1px solid black;
-        float:left;
-        width:40vw;
         margin-top:10px;
+
     
     }   
 
@@ -82,11 +87,7 @@
     #skills-panel {
         background-color:#93795e;
         border-radius: 3px;
-        width:30vw;
-        max-width:35vw;
-        height:80vh;
-        display:inline-block;
-                margin-top:10px;
+        margin-top:10px;
 
         
     }
@@ -115,11 +116,6 @@
     
     img:active {
         filter:invert(1);
-/*
-        height:100%;
-        width:100%;
-        margin-left:1%;
-*/
     }
     
         
@@ -133,7 +129,8 @@
 </style>
 
 
-
+<body>
+    
 <ul id="nav">
     <li id="help" onclick="clickedHelp()"><a>Help</a></li>
     
@@ -145,10 +142,8 @@
 </ul>
     
     
-<div id="main">
     
 <div id="app">
-    
     
 <!--
   Skill: <select id="skills-list" name="">
@@ -178,34 +173,19 @@
   </select>
 -->
     
-    
-    
 
 Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPressed(event)">
     
-    
 <input type="button" value="+1" onclick="increaseBy1()"> 
-<input type="button" value="+5" onclick="increaseBy5()">   
-    
+<input type="button" value="+5" onclick="increaseBy5()">    
     
 <input type="submit" style="display: none"/>  
-
-    
-    
-    
 
 <p>Choose a skill to begin</p>
 
 <p>EXP required: </p>
 
 <p id="TTL">Estimated TTL: </p>
-    
-
-<!--
-<button id="enter-button" onclick="mainProgram()">
-    Try it
-</button>
--->
 
 <button id="enter-button" onclick="calculateAllSkills()">
     ALL SKILLS
@@ -215,8 +195,6 @@ Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPres
 <p style="background-color:white;">How To Use: Enter your current level in the text-field above, then click on a skill icon.</p>
 
 </div>
-
-
 
 <div id="skills-panel">
 
@@ -283,7 +261,6 @@ Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPres
 </table>
 
 </div>
-    </div>
 
-
+    </body>
 </html>

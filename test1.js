@@ -34,6 +34,22 @@ function returnXpRate(skillName) {
         }
     }
     
+        if (skillName == "Construction") {
+        if (currentLevel < 20) {
+            xpRate = 20000;           
+        } else if (20 <= currentLevel && currentLevel < 34) {
+            xpRate = 45000;
+        } else if (20 <= currentLevel && currentLevel < 34) {
+            xpRate = 200000;
+        } else if (33 <= currentLevel && currentLevel < 51) {
+            xpRate = 200000;
+        } else if (51 <= currentLevel && currentLevel < 74) {
+            xpRate = 300000;
+        } else if (74 <= currentLevel && currentLevel < 99) {
+            xpRate = 450000;
+        } 
+    }
+    
     return xpRate;
        
 }
@@ -335,8 +351,9 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     p43 = [35, "Making Friends with My Arm"];
     p44 = [50, "Dragon Slayer II"];
     p45 = [70, "Song of the Elves"];
+    p46 = [99, "Skillcape"];
 
-    var constructionList = [p37,p38,p39,p40,p41,p42,p43,p44,p45];
+    var constructionList = [p37,p38,p39,p40,p41,p42,p43,p44,p45,p46];
     constructionList = constructionList.sort();
 
     // COOKING 
