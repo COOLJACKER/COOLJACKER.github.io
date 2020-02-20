@@ -119,12 +119,28 @@ function increaseBy5() {
 
 }
 
+function decreaseBy5() {
+    var currentLevel = Number(document.getElementById("level").value);
+    currentLevel = currentLevel - 5;
+    document.getElementById("level").value = currentLevel;
+
+}
+
 function increaseBy1() {
     var currentLevel = Number(document.getElementById("level").value);
     currentLevel = currentLevel + 1;
     document.getElementById("level").value = currentLevel;
 
 }
+
+
+function decreaseBy1() {
+    var currentLevel = Number(document.getElementById("level").value);
+    currentLevel = currentLevel - 1;
+    document.getElementById("level").value = currentLevel;
+
+}
+
 
 function getSkill(skillName) {
     
