@@ -1,3 +1,17 @@
+function setList() {
+    var choices = document.getElementsByName("choose"); 
+    var choice;
+    
+    for(var i = 0; i < choices.length; i++){
+    if(choices[i].checked){
+        choice = choices[i].value;
+        }
+    }
+    document.getElementById("testing").innerHTML=choice;
+    return choice;
+}
+
+
 
 
 function returnXpRate(skillName) {
@@ -146,11 +160,24 @@ function getSkill(skillName) {
     
     //var skillName = document.getElementById("skills-panel").value;
     var levelsList = [];
+    var choice = setList();
     
-    if (skillName == "Agility") {                       // decide which skill to use 
-        levelsList = agilityList;
+    if (skillName == "Agility") {              
+        levelsList = agilityQuests;
+        
     } else if (skillName == "Attack") {
-        levelsList = attackList;
+        if (choice == "quests-only") {
+            levelsList = attackQuests;
+        } else if (choice == "diary-only") {
+            levelsList = attackDiary;
+        } else {
+            levelsList = attackQuests.concat(attackDiary);
+            levelsList = levelsList.sort();
+        }
+        
+        
+        
+        
     } else if (skillName == "Construction") {
         levelsList = constructionList;
     } else if (skillName == "Cooking") {
@@ -341,8 +368,8 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     p29 = [70, "Song of the Elves"];
     p30 = [99, "Skillcape"];
 
-    var agilityList = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30];
-    agilityList = agilityList.sort();
+    var agilityQuests = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30];
+    agilityQuests = agilityQuests.sort();
 
     // ATTACK 
 
@@ -353,8 +380,15 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     p35 = [50, "Another slice of HAM"];
     p36 = [99, "Skillcape"];
 
-    var attackList = [p31,p32,p33,p34,p35,p36];
-    attackList = attackList.sort();
+    var attackQuests = [p31,p32,p33,p34,p35,p36];
+    attackQuests = attackQuests.sort();
+
+
+    var attackDiary = [
+        [50, "Ardougne - Medium", "Equip an Iban's upgraded staff or upgrade an Iban's staff."],
+        [42, "Western Provinces - Elite", "Equip any complete void set."],
+        [99, "Falador - Hard", "Enter the Warriors' Guild."],
+    ].sort();
 
 
 	// CONSTRUCTION
