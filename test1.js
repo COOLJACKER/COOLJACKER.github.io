@@ -163,7 +163,14 @@ function getSkill(skillName) {
     var choice = setList();
     
     if (skillName == "Agility") {              
-        levelsList = agilityQuests;
+                if (choice == "quests-only") {
+            levelsList = agilityQuests;
+        } else if (choice == "diary-only") {
+            levelsList = agilityDiary;
+        } else {
+            levelsList = agilityQuests.concat(agilityDiary);
+            levelsList = levelsList.sort();
+        }
         
     } else if (skillName == "Attack") {
         if (choice == "quests-only") {
@@ -370,6 +377,47 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
 
     var agilityQuests = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30];
     agilityQuests = agilityQuests.sort();
+
+    var agilityDiary = [
+        [5,"Falador - Easy","Climb over the western Falador wall."],
+        [8,"Lumbridge & Draynor - Medium","Grapple across the River Lum."],
+        [10,"Karamja - Easy"],
+        [10,"Lumbridge & Draynor - Easy"],
+        [11,"Falador - Medium"],
+        [12, "Karamja - Medium"],
+        [12, "Karamja - Hard"],
+        [13,"Varrock - Easy"],
+        [15,"Karamja - Easy"],
+        [15, "Wilderness - Easy"],
+        [20,"Kandarin - Easy"],
+        [20,"Lumbridge & Draynor - Medium"],
+        [30,"Desert - Medium"],
+        [30,"Varrock - Medium"],
+        [35,"Kandarin - Medium"],
+        [37, "Western Provinces - Medium"],
+        [39,"Ardougne - Medium"],
+        [40,"Morytania - Medium"],
+        [42,"Falador - Medium"],
+        [46, "Lumbridge & Draynor - Hard"],
+        [48,"Western Provinces - Hard"],
+        [49,"Kourend & Kebos - Medium"],
+        [50,"Karamja - Hard"],
+        [51,"Varrock - Hard"],
+        [52,"Wilderness - Medium"],
+        [56, "Western Provinces - Hard"],
+        [60,"Wilderness - Medium"],
+        [60,"Kandarin - Hard"],
+        [60,"Kandarin - Elite"],
+        [64, "Wilderness - Hard"],
+        [65, "Morytania - Hard"],
+        [70, "Fremennik - Elite"],
+        [70,"Lumbridge & Draynor - Elite"],
+        [71,"Morytania - Hard"],
+        [80,"Falador - Elite"],
+        [80,"Fremennik - Elite"],
+        [85,"Western Provinces - Elite"],
+        [90,"Ardougne - Elite"],  
+    ].sort();
 
     // ATTACK 
 
