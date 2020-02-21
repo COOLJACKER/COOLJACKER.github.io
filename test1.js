@@ -13,6 +13,13 @@ function setList() {
 
 
 
+function mark(id) {
+    //document.getElementsByClassName("icon").style.backgroundColor = "black";
+    document.getElementById(id).style.backgroundColor = "#e6e6c1";
+    
+}
+
+
 
 function returnXpRate(skillName) {
     var currentLevel = getCurrentLevel();
@@ -175,7 +182,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = agilityQuests.concat(agilityDiary).sort(function(a, b){return a - b});
+                    levelsList = agilityQuests.concat(agilityDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             } 
             break;
@@ -191,7 +198,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = attackQuests.concat(attackDiary).sort(function(a, b){return a - b});
+                    levelsList = attackQuests.concat(attackDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -207,7 +214,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = constructionQuests.concat(constructionDiary).sort(function(a, b){return a - b});
+                    levelsList = constructionQuests.concat(constructionDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -223,7 +230,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = cookingQuests.concat(cookingDiary).sort(function(a, b){return a - b});
+                    levelsList = cookingQuests.concat(cookingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -240,7 +247,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = craftingQuests.concat(craftingDiary).sort(function(a, b){return a - b});
+                    levelsList = craftingQuests.concat(craftingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -257,7 +264,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = defenceQuests.concat(defenceDiary).sort(function(a, b){return a - b});
+                    levelsList = defenceQuests.concat(defenceDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -274,7 +281,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = farmingQuests.concat(farmingDiary).sort(function(a, b){return a - b});
+                    levelsList = farmingQuests.concat(farmingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -290,7 +297,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = firemakingQuests.concat(firemakingDiary).sort(function(a, b){return a - b});
+                    levelsList = firemakingQuests.concat(firemakingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -306,7 +313,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = fishingQuests.concat(fishingDiary).sort(function(a, b){return a - b});
+                    levelsList = fishingQuests.concat(fishingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -322,7 +329,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = fletchingQuests.concat(fletchingDiary).sort(function(a, b){return a - b});
+                    levelsList = fletchingQuests.concat(fletchingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -338,7 +345,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = herbloreQuests.concat(herbloreDiary).sort(function(a, b){return a - b});
+                    levelsList = herbloreQuests.concat(herbloreDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -354,7 +361,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = hitpointsQuests.concat(hitpointsDiary).sort(function(a, b){return a - b});
+                    levelsList = hitpointsQuests.concat(hitpointsDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -370,7 +377,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = hunterQuests.concat(hunterDiary).sort(function(a, b){return a - b});
+                    levelsList = hunterQuests.concat(hunterDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -386,7 +393,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = magicQuests.concat(magicDiary).sort(function(a, b){return a - b});
+                    levelsList = magicQuests.concat(magicDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -402,7 +409,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = miningQuests.concat(miningDiary).sort(function(a, b){return a - b});
+                    levelsList = miningQuests.concat(miningDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -418,7 +425,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = prayerQuests.concat(prayerDiary).sort(function(a, b){return a - b});
+                    levelsList = prayerQuests.concat(prayerDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -434,7 +441,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = rangedQuests.concat(rangedDiary).sort(function(a, b){return a - b});
+                    levelsList = rangedQuests.concat(rangedDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -450,7 +457,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = runecraftQuests.concat(runecraftDiary).sort(function(a, b){return a - b});
+                    levelsList = runecraftQuests.concat(runecraftDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -466,7 +473,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = slayerQuests.concat(slayerDiary).sort(function(a, b){return a - b});
+                    levelsList = slayerQuests.concat(slayerDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -482,7 +489,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = smithingQuests.concat(smithingDiary).sort(function(a, b){return a - b});
+                    levelsList = smithingQuests.concat(smithingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -498,7 +505,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = strengthQuests.concat(strengthDiary).sort(function(a, b){return a - b});
+                    levelsList = strengthQuests.concat(strengthDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -514,7 +521,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = thievingQuests.concat(thievingDiary).sort(function(a, b){return a - b});
+                    levelsList = thievingQuests.concat(thievingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -530,7 +537,7 @@ function getSkill(skillName) {
                     break;
                     
                 case "quest+diary":
-                    levelsList = woodcuttingQuests.concat(woodcuttingDiary).sort(function(a, b){return a - b});
+                    levelsList = woodcuttingQuests.concat(woodcuttingDiary).sort(function(a, b){return a[0] - b[0]});
                     break;
             }   
             break;
@@ -557,7 +564,6 @@ function writeAllValues(skillName) {
     document.getElementsByTagName("p")[1].innerHTML="EXP required: " + xpRequired;
         
     document.getElementsByTagName("p")[2].innerHTML="Estimated TTL: " + TTL;
-    
     
     document.getElementById("testing").innerHTML=extra;
 
@@ -753,24 +759,55 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     var constructionQuests = [p37,p38,p39,p40,p41,p42,p43,p44,p45,p46];
     constructionQuests = constructionQuests.sort(function(a, b){return a - b});
 
+
+    var constructionDiary = [
+        [16,"Falador - Easy","Find out what your family crest is from Sir Renitee"],
+        [16,"Falador - Hard","Change your family crest to the Saradomin symbol"],
+        [20,"Desert - Medium", "Teleport to Pollnivneach with a redirected Teleport to House tablet"],
+        [25,"Kourend & Kebos - Easy","Enter your player-owned house from Hosidius."],
+        [37,"Fremennik - Medium","Pick up your Pet rock from your POH Menagerie"],
+        [50,"Ardougne - Hard","Enter your POH from Yanille"],
+        [50,"Kandarin - Hard", "Have the Seers' Estate agent decorate your house with Fancy Stone"],
+        [50,"Morytania - Hard","Enter the Kharyrll portal in your POH"],
+        [50,"Varrock - Hard","Have the Varrock Estate agent decorate your house with Fancy Stone"],
+        [65,"Western Provinces - Hard","Build an Isafdar painting in your POH Quest Hall"],
+        [78,"Desert - Elite","Speak to the Kq head in your POH"],  
+    ].sort(function(a, b){return a - b});
+
+
     // COOKING 
 
     var cookingQuests = [
-        [10, "Recipe for Disaster - Beginning"],
-        [20, "Ghosts Ahoy"],
-        [22, "Forgettable Tale of a Drunken Dwarf"],
-        [25, "Recipe for Disaster - Evil Dave subquest"],
-        [30, "Big Chompy Bird Hunting"],
-        [30, "Tai Bwo Wannai Trio"],
-        [31, "Recipe for Disaster - Pirate Pete "],
-        [40, "Recipe for Disaster - Lumbridge Guide subquest"],
-        [41, "Recipe for Disaster - Skrach Uglogwee subquest"],
-        [53, "Heroes' Quest*"],
-        [62, "Swan Song"],
-        [70, "Recipe for Disaster - Awowogei subquest*"],
-        [99, "Skillcape"]
-    ].sort(function(a, b){return a - b});
+        [10, "Recipe for Disaster - Beginning",""],
+        [20, "Ghosts Ahoy",""],
+        [22, "Forgettable Tale of a Drunken Dwarf",""],
+        [25, "Recipe for Disaster - Evil Dave subquest",""],
+        [30, "Big Chompy Bird Hunting",""],
+        [30, "Tai Bwo Wannai Trio",""],
+        [31, "Recipe for Disaster - Pirate Pete",""],
+        [40, "Recipe for Disaster - Lumbridge Guide subquest",""],
+        [41, "Recipe for Disaster - Skrach Uglogwee subquest",""],
+        [53, "Heroes' Quest*",""],
+        [62, "Swan Song",""],
+        [70, "Recipe for Disaster - Awowogei subquest*",""],
+        [99, "Skillcape",""]
+    ];
 
+    var cookingDiary = [
+        [12,"Morytania - Easy","Cook a Thin snail on the Port Phasmatys range"],
+        [16,"Karamja - Medium","Cook a Spider on a stick"],
+        [30,"Karamja - Hard","Cook a Karambwan thoroughly"],
+        [40,"Morytania - Medium","Complete a game of Trouble Brewing"],
+        [42,"Western Provinces - Medium","Make a Chocolate bomb at the Grand Tree"],
+        [43,"Kandarin - Medium","Catch and cook a Bass in Catherby"],
+        [62,"Western Provinces - Hard","Catch and cook a Monkfish in Piscatoris"],
+        [80,"Kandarin - Elite","Fish and cook 5 Sharks in Catherby using the Cooking gauntlets"],
+        [84,"Kourend & Kebos - Elite","Catch an anglerfish and cook it whilst in Great Kourend."],
+        [85,"Desert - Elite","Bake a Wild pie at the Nardah clay oven"],
+        [90,"Wilderness - Elite","Fish and cook a Dark crab in the Resource Area"],
+        [91,"Ardougne - Elite","Catch a Manta ray in the Fishing Trawler and cook it in Port Khazard"],
+        [95,"Varrock - Elite","Bake a Summer pie in the Cooking Guild"] 
+    ];
 
     // CRAFTING 
 
@@ -810,6 +847,25 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [70,"Monkey Madness II"],
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var craftingDiary = [
+        [8,"Varrock - Easy","Spin a Bowl on the pottery wheel and fire in the oven in Barbarian Village"],
+        [10,"Kandarin - Hard","Create a Yew longbow from scratch around Seers' Village"],
+        [10,"Ardougne - Elite","Make a Rune crossbow yourself from scratch within Witchaven or Yanille"],
+        [15,"Morytania - Easy","Craft any Snelm from scratch in Morytania"],
+        [23,"Fremennik - Easy","Craft a Tiara from scratch in Rellekka"],
+        [30,"Kourend & Kebos - Medium","Repair a crane within Port Piscarilius."],
+        [36,"Falador - Medium","Craft a Fruit basket on the Falador farm loom"],
+        [38,"Lumbridge & Draynor","Craft a Coif in the Lumbridge cow pen (eastern cows)"],
+        [38,"Kourend & Kebos","Craft one or more blood runes."],
+        [40,"Falador - Medium","Mine some Gold ore at the Crafting Guild"],
+        [49,"Ardougne - Medium","Claim buckets of sand from Bert in Yanille."],
+        [70,"Lumbridge & Draynor - Hard","Craft, string, and enchant an Amulet of power in Lumbridge"],
+        [80,"Fremmenik - Elite","Craft a Dragonstone amulet in the Neitiznot furnace"],
+        [84,"Morytania - Elite","Craft a Black dragonhide body in Canifis bank"],
+        [85,"Kandarin - Elite","Construct a pyre ship from Magic logs"]
+        
+    ];
 
     // DEFENCE
 
