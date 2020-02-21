@@ -549,6 +549,7 @@ function getSkill(skillName) {
             break;
             
         }
+    
 
 	return levelsList;
 }
@@ -882,6 +883,21 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [65,"King's Ransom"],
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var defenceDiary = [
+        [10,"Desert - Hard","Slay a Dust devil in the desert cave with a Slayer helmet equipped."],
+        [20,"Falador - Medium","Pray at the Altar of Guthix in Taverley whilst wearing full Initiate armour"],
+        [30,"Falador - Hard","Recharge your prayer in Port Sarim church while wearing full Proselyte"],
+        [50,"Falador - Hard","Equip a Dwarven helmet within the Dwarven mines"],
+        [50,"Kandarin - Hard","Purchase and equip a Granite body from Barbarian Assault"],
+        [70,"Kandarin - Hard","Enter the Seers' Village courthouse with Piety turned on"],
+        [70,"Morytania - Hard","Pray at the Altar of Nature with Piety activated"],
+        [70,"Morytania - Elite","Loot the Barrows chest while wearing any complete Barrows set"],   
+    ];
+
+
+
+
 
     // FARMING 
     var farmingQuests = [
