@@ -912,6 +912,38 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
 
+
+    var farmingDiary = [
+        [13,"Kandarin - Easy"],
+        [23,"Falador - Medium"],
+        [23,"Morytania - Easy"],
+        [26,"Kandarin - Medium"],
+        [27,"Karamja - Medium"],
+        [31,"Ardougne - Medium"],
+        [45,"Kourend & Kebos - Medium"],
+        [47,"Morytania - Hard"],
+        [53,"Morytania - Hard"],
+        [63,"Lumbridge & Draynor"],
+        [68,"Varrock - Hard"],
+        [68,"Ardougne - Hard"],
+        [68,"Karamja - Elite"],
+        [68,"Western Provinces - Hard"],
+        [70,"Ardougne - Hard"],
+        [72,"Karamja - Elite"],
+        [74,"Kourend & Kebos - Hard"],
+        [75,"Western Provinces - Elite","Have Prissy Scilla protect your Magic tree"],
+        [79,"Kandarin - Elite","Pick some Dwarf weed from the herb patch at Catherby"],
+        [85,"Ardougne - Elite","Pick some Torstol from the patch north of East Ardougne"],
+        [85,"Kourend & Kebos","Create your own battlestaff from scratch within the Farming Guild."],
+        [91,"Falador - Elite"]
+        
+    ];
+
+
+
+
+
+
     // FIREAMKING
     var firemakingQuests = [
         [5,"Shades of Mort'ton"],
