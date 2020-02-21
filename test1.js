@@ -162,71 +162,423 @@ function getSkill(skillName) {
     var levelsList = [];
     var choice = setList();
     
-    if (skillName == "Agility") {              
-                if (choice == "quests-only") {
-            levelsList = agilityQuests;
-        } else if (choice == "diary-only") {
-            levelsList = agilityDiary;
-        } else {
-            levelsList = agilityQuests.concat(agilityDiary);
-            levelsList = levelsList.sort();
-        }
+    
+    switch(skillName) {
+        case "Agility":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = agilityDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = agilityQuests;
+                    break;
+                    
+                default:
+                    levelsList = agilityQuests.concat(agilityDiary).sort();
+                    break;
+            } 
+            break;
+            
+        case "Attack":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = attackDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = attackQuests;
+                    break;
+                    
+                default:
+                    levelsList = attackQuests.concat(attackDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Construction":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = constructionDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = constructionQuests;
+                    break;
+                    
+                default:
+                    levelsList = constructionQuests.concat(constructionDiary).sort();
+                    break;
+            }   
+            break;
+
+        case "Cooking":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = cookingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = cookingQuests;
+                    break;
+                    
+                default:
+                    levelsList = cookingQuests.concat(cookingDiary).sort();
+                    break;
+            }   
+            break;
+    
+    
+        case "Crafting":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = craftingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = craftingQuests;
+                    break;
+                    
+                default:
+                    levelsList = craftingQuests.concat(craftingDiary).sort();
+                    break;
+            }   
+            break;
+    
+
+        case "Defence":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = defenceDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = defenceQuests;
+                    break;
+                    
+                default:
+                    levelsList = defenceQuests.concat(defenceDiary).sort();
+                    break;
+            }   
+            break;
+    
+    
+        case "Farming":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = farmingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = farmingQuests;
+                    break;
+                    
+                default:
+                    levelsList = farmingQuests.concat(farmingDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Firemaking":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = firemakingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = firemakingQuests;
+                    break;
+                    
+                default:
+                    levelsList = firemakingQuests.concat(firemakingDiary).sort();
+                    break;
+            }   
+            break;
+    
+        case "Fishing":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = fishingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = fishingQuests;
+                    break;
+                    
+                default:
+                    levelsList = fishingQuests.concat(fishingDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Fletching":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = fletchingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = fletchingQuests;
+                    break;
+                    
+                default:
+                    levelsList = fletchingQuests.concat(fletchingDiary).sort();
+                    break;
+            }   
+            break;
         
-    } else if (skillName == "Attack") {
-        if (choice == "quests-only") {
-            levelsList = attackQuests;
-        } else if (choice == "diary-only") {
-            levelsList = attackDiary;
-        } else {
-            levelsList = attackQuests.concat(attackDiary);
-            levelsList = levelsList.sort();
-        }
+        case "Herblore":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = herbloreDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = herbloreQuests;
+                    break;
+                    
+                default:
+                    levelsList = herbloreQuests.concat(herbloreDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Hitpoints":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = hitpointsDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = hitpointsQuests;
+                    break;
+                    
+                default:
+                    levelsList = hitpointsQuests.concat(hitpointsDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Hunter":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = hunterDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = hunterQuests;
+                    break;
+                    
+                default:
+                    levelsList = hunterQuests.concat(hunterDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Magic":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = magicDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = magicQuests;
+                    break;
+                    
+                default:
+                    levelsList = magicQuests.concat(magicDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Mining":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = miningDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = miningQuests;
+                    break;
+                    
+                default:
+                    levelsList = miningQuests.concat(miningDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Prayer":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = prayerDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = prayerQuests;
+                    break;
+                    
+                default:
+                    levelsList = prayerQuests.concat(prayerDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Ranged":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = rangedDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = rangedQuests;
+                    break;
+                    
+                default:
+                    levelsList = rangedQuests.concat(rangedDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Runecraft":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = runecraftDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = runecraftQuests;
+                    break;
+                    
+                default:
+                    levelsList = runecraftQuests.concat(runecraftDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Slayer":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = slayerDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = slayerQuests;
+                    break;
+                    
+                default:
+                    levelsList = slayerQuests.concat(slayerDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Smithing":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = smithingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = smithingQuests;
+                    break;
+                    
+                default:
+                    levelsList = smithingQuests.concat(smithingDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Strength":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = strengthDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = strengthQuests;
+                    break;
+                    
+                default:
+                    levelsList = strengthQuests.concat(strengthDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Thieving":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = thievingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = thievingQuests;
+                    break;
+                    
+                default:
+                    levelsList = thievingQuests.concat(thievingDiary).sort();
+                    break;
+            }   
+            break;
+            
+        case "Woodcutting":
+            switch(choice) {
+                case "diary-only":
+                  levelsList = woodcuttingDiary;
+                    break;
+                    
+                case "quests-only":
+                    levelsList = woodcuttingQuests;
+                    break;
+                    
+                default:
+                    levelsList = woodcuttingQuests.concat(woodcuttingDiary).sort();
+                    break;
+            }   
+            break;
         
         
-        
-        
-    } else if (skillName == "Construction") {
-        levelsList = constructionList;
-    } else if (skillName == "Cooking") {
-        levelsList = cookingList;
-    } else if (skillName == "Crafting") {
-        levelsList = craftingList;
-    } else if (skillName == "Defence") {
-        levelsList = defenceList;
-    } else if (skillName == "Farming") {
-        levelsList = farmingList;
-    } else if (skillName == "Firemaking") {
-        levelsList = firemakingList;
-    } else if (skillName == "Fishing") {
-        levelsList = fishingList;
-    } else if (skillName == "Fletching") {
-        levelsList = fletchingList;
-    } else if (skillName == "Herblore") {
-        levelsList = herbloreList;
-    } else if (skillName == "Hitpoints") {
-        levelsList = hitpointsList;
-    }  else if (skillName == "Hunter") {
-        levelsList = hunterList;
-    }   else if (skillName == "Magic") {
-        levelsList = magicList;
-    } else if (skillName == "Mining") {
-        levelsList = miningList;
-    } else if (skillName == "Prayer") {
-        levelsList = prayerList;
-    } else if (skillName == "Ranged") {
-        levelsList = rangedList;
-    } else if (skillName == "Runecraft") {
-        levelsList = runecraftList;
-    } else if (skillName == "Slayer") {
-        levelsList = slayerList;
-    } else if (skillName == "Smithing") {
-        levelsList = smithingList;
-    } else if (skillName == "Strength") {
-        levelsList = strengthList;
-    } else if (skillName == "Thieving") {
-        levelsList = thievingList;
-    } else if (skillName == "Woodcutting") {
-        levelsList = woodcuttingList;
+//    } else if (skillName == "Construction") {
+//        levelsList = constructionList;
+//    } else if (skillName == "Cooking") {
+//        levelsList = cookingList;
+//    } else if (skillName == "Crafting") {
+//        levelsList = craftingList;
+//    } else if (skillName == "Defence") {
+//        levelsList = defenceList;
+//    } else if (skillName == "Farming") {
+//        levelsList = farmingList;
+//    } else if (skillName == "Firemaking") {
+//        levelsList = firemakingList;
+//    } else if (skillName == "Fishing") {
+//        levelsList = fishingList;
+//    } else if (skillName == "Fletching") {
+//        levelsList = fletchingList;
+//    } else if (skillName == "Herblore") {
+//        levelsList = herbloreList;
+//    } else if (skillName == "Hitpoints") {
+//        levelsList = hitpointsList;
+//    }  else if (skillName == "Hunter") {
+//        levelsList = hunterList;
+//    }   else if (skillName == "Magic") {
+//        levelsList = magicList;
+//    } else if (skillName == "Mining") {
+//        levelsList = miningList;
+//    } else if (skillName == "Prayer") {
+//        levelsList = prayerList;
+//    } else if (skillName == "Ranged") {
+//        levelsList = rangedList;
+//    } else if (skillName == "Runecraft") {
+//        levelsList = runecraftList;
+//    } else if (skillName == "Slayer") {
+//        levelsList = slayerList;
+//    } else if (skillName == "Smithing") {
+//        levelsList = smithingList;
+//    } else if (skillName == "Strength") {
+//        levelsList = strengthList;
+//    } else if (skillName == "Thieving") {
+//        levelsList = thievingList;
+//    } else if (skillName == "Woodcutting") {
+//        levelsList = woodcuttingList;
+//    }
     }
 
 	return levelsList;
@@ -451,12 +803,12 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     p45 = [70, "Song of the Elves"];
     p46 = [99, "Skillcape"];
 
-    var constructionList = [p37,p38,p39,p40,p41,p42,p43,p44,p45,p46];
-    constructionList = constructionList.sort();
+    var constructionQuests = [p37,p38,p39,p40,p41,p42,p43,p44,p45,p46];
+    constructionQuests = constructionQuests.sort();
 
     // COOKING 
 
-    var cookingList = [
+    var cookingQuests = [
         [10, "Recipe for Disaster - Beginning"],
         [20, "Ghosts Ahoy"],
         [22, "Forgettable Tale of a Drunken Dwarf"],
@@ -475,7 +827,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
 
     // CRAFTING 
 
-    var craftingList = [
+    var craftingQuests = [
         [10,"Observatory Quest"],
         [12,"The Giant Dwarf"],
         [16,"The Great Brain Robbery"],
@@ -514,7 +866,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
 
     // DEFENCE
 
-    var defenceList = [
+    var defenceQuests = [
         [20,"Rag and Bone Man II"],
         [30,"Between a Rock..."],
         [40,"Lunar Diplomacy"],
@@ -523,7 +875,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     ].sort();
 
     // FARMING 
-    var farmingList = [
+    var farmingQuests = [
         [17,"Forgettable Tale of a Drunken Dwarf"],
         [25,"Garden of Tranquillity"],
         [29,"My Arm's Big Adventure"],
@@ -536,7 +888,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     ].sort();
 
     // FIREAMKING
-    var firemakingList = [
+    var firemakingQuests = [
         [5,"Shades of Mort'ton"],
         [16,"The Giant Dwarf"],
         [20,"Enlightened Journey"],
@@ -554,7 +906,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     ].sort();
 
     // FISHING
-    var fishingList = [
+    var fishingQuests = [
         [5,"Tai Bwo Wannai Trio"],
         [10,"Fishing Contest"],
         [50,"Rum Deal*"],
@@ -564,7 +916,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape (provides unlimited teleports to either the Fishing Guild or Otto's Grotto)"]
     ].sort();
 
-    var fletchingList = [
+    var fletchingQuests = [
         [5,"Big Chompy Bird Hunting"],
         [10,"The Tourist Trap"],
         [25,"The Fremennik Trials*"],
@@ -573,7 +925,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort();
 
-    var herbloreList = [
+    var herbloreQuests = [
         [3,"Jungle Potion"],
         [5,"Lunar Diplomacy"],
         [8,"Zogre Flesh Eaters"],
@@ -590,9 +942,9 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort();
 
-    var hitpointsList = [[50,"Dragon Slayer II"], [99, "Skillcape"]];
+    var hitpointsQuests = [[50,"Dragon Slayer II"], [99, "Skillcape"]];
 
-    var hunterList = [
+    var hunterQuests = [
         [10,"Cold War"],
         [12,"The Ascent of Arceuus"],
         [27,"Eagles' Peak"],
@@ -601,7 +953,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort();
 
-    var magicList = [
+    var magicQuests = [
         [7,"In Aid of the Myreque"],
         [15,"Watchtower"],
         [20,"Elemental Workshop II"],
@@ -620,7 +972,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort();
 
-    var miningList = [
+    var miningQuests = [
         [10,"The Knight's Sword"],
         [15,"In Aid of the Myreque"],
         [17,"The Lost Tribe"],
@@ -640,7 +992,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort();
 
-    var prayerList = [
+    var prayerQuests = [
         [25, "Another Slice of H.A.M."],
         [31,"Scorpion Catcher"],
         [42,"Legends' Quest"],
@@ -650,7 +1002,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99,"Skillcape"]
     ].sort();
 
-    var rangedList = [
+    var rangedQuests = [
         [25,"Underground Pass"],
         [30,"Animal Magnetism"],
         [30,"Big Chompy Bird Hunting"],
@@ -662,7 +1014,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort();
 
-    var runecraftList = [
+    var runecraftQuests = [
         [13,"The Eyes of Glouphrie"],
         [30,"The Slug Menace"],
         [35,"What Lies Below"],
@@ -671,7 +1023,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99,"Skillcape"]
     ].sort();
 
-    var slayerList = [
+    var slayerQuests = [
         [10,"Desert Treasure"],
         [18,"Animal Magnetism"],
         [30,"The Slug Menace"],
@@ -684,7 +1036,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99,"Skillcape"]
     ].sort();
 
-    var smithingList = [
+    var smithingQuests = [
         [4,"Zogre Flesh Eaters"],
         [20,"Elemental Workshop I"],
         [20,"The Tourist Trap"],
@@ -702,14 +1054,14 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99,"Skillcape"]
     ].sort();
 
-    var strengthList = [
+    var strengthQuests = [
         [20,"Zogre Flesh Eaters"],
         [40,"Darkness of Hallowvale"],
         [50,"Legends' Quest"],
         [99,"Skillcape"]
     ].sort();
 
-    var thievingList = [
+    var thievingQuests = [
         [13,"The Lost Tribe"],
         [14,"The Giant Dwarf"],
         [15,"Cold War"],
@@ -735,7 +1087,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99,"Skillcape"]
     ].sort();
 
-    var woodcuttingList = [
+    var woodcuttingQuests = [
         [10,"My Arm's Big Adventure"],
         [35,"Animal Magnetism"],
         [36,"Lost City"],
