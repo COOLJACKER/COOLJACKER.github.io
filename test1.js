@@ -7,7 +7,7 @@ function setList() {
         choice = choices[i].value;
         }
     }
-    document.getElementById("testing").innerHTML=choice;
+    //document.getElementById("testing").innerHTML=choice;
     return choice;
 }
 
@@ -159,7 +159,7 @@ function decreaseBy1() {
 function getSkill(skillName) {
     
     //var skillName = document.getElementById("skills-panel").value;
-    var levelsList = [];
+    var levelsList;
     var choice = setList();
     
     
@@ -174,8 +174,8 @@ function getSkill(skillName) {
                     levelsList = agilityQuests;
                     break;
                     
-                default:
-                    levelsList = agilityQuests.concat(agilityDiary).sort();
+                case "quest+diary":
+                    levelsList = agilityQuests.concat(agilityDiary).sort(function(a, b){return a - b});
                     break;
             } 
             break;
@@ -190,8 +190,8 @@ function getSkill(skillName) {
                     levelsList = attackQuests;
                     break;
                     
-                default:
-                    levelsList = attackQuests.concat(attackDiary).sort();
+                case "quest+diary":
+                    levelsList = attackQuests.concat(attackDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -206,8 +206,8 @@ function getSkill(skillName) {
                     levelsList = constructionQuests;
                     break;
                     
-                default:
-                    levelsList = constructionQuests.concat(constructionDiary).sort();
+                case "quest+diary":
+                    levelsList = constructionQuests.concat(constructionDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -222,8 +222,8 @@ function getSkill(skillName) {
                     levelsList = cookingQuests;
                     break;
                     
-                default:
-                    levelsList = cookingQuests.concat(cookingDiary).sort();
+                case "quest+diary":
+                    levelsList = cookingQuests.concat(cookingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -239,8 +239,8 @@ function getSkill(skillName) {
                     levelsList = craftingQuests;
                     break;
                     
-                default:
-                    levelsList = craftingQuests.concat(craftingDiary).sort();
+                case "quest+diary":
+                    levelsList = craftingQuests.concat(craftingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -256,8 +256,8 @@ function getSkill(skillName) {
                     levelsList = defenceQuests;
                     break;
                     
-                default:
-                    levelsList = defenceQuests.concat(defenceDiary).sort();
+                case "quest+diary":
+                    levelsList = defenceQuests.concat(defenceDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -273,8 +273,8 @@ function getSkill(skillName) {
                     levelsList = farmingQuests;
                     break;
                     
-                default:
-                    levelsList = farmingQuests.concat(farmingDiary).sort();
+                case "quest+diary":
+                    levelsList = farmingQuests.concat(farmingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -289,8 +289,8 @@ function getSkill(skillName) {
                     levelsList = firemakingQuests;
                     break;
                     
-                default:
-                    levelsList = firemakingQuests.concat(firemakingDiary).sort();
+                case "quest+diary":
+                    levelsList = firemakingQuests.concat(firemakingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -305,8 +305,8 @@ function getSkill(skillName) {
                     levelsList = fishingQuests;
                     break;
                     
-                default:
-                    levelsList = fishingQuests.concat(fishingDiary).sort();
+                case "quest+diary":
+                    levelsList = fishingQuests.concat(fishingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -321,8 +321,8 @@ function getSkill(skillName) {
                     levelsList = fletchingQuests;
                     break;
                     
-                default:
-                    levelsList = fletchingQuests.concat(fletchingDiary).sort();
+                case "quest+diary":
+                    levelsList = fletchingQuests.concat(fletchingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -337,8 +337,8 @@ function getSkill(skillName) {
                     levelsList = herbloreQuests;
                     break;
                     
-                default:
-                    levelsList = herbloreQuests.concat(herbloreDiary).sort();
+                case "quest+diary":
+                    levelsList = herbloreQuests.concat(herbloreDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -353,8 +353,8 @@ function getSkill(skillName) {
                     levelsList = hitpointsQuests;
                     break;
                     
-                default:
-                    levelsList = hitpointsQuests.concat(hitpointsDiary).sort();
+                case "quest+diary":
+                    levelsList = hitpointsQuests.concat(hitpointsDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -369,8 +369,8 @@ function getSkill(skillName) {
                     levelsList = hunterQuests;
                     break;
                     
-                default:
-                    levelsList = hunterQuests.concat(hunterDiary).sort();
+                case "quest+diary":
+                    levelsList = hunterQuests.concat(hunterDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -385,8 +385,8 @@ function getSkill(skillName) {
                     levelsList = magicQuests;
                     break;
                     
-                default:
-                    levelsList = magicQuests.concat(magicDiary).sort();
+                case "quest+diary":
+                    levelsList = magicQuests.concat(magicDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -401,8 +401,8 @@ function getSkill(skillName) {
                     levelsList = miningQuests;
                     break;
                     
-                default:
-                    levelsList = miningQuests.concat(miningDiary).sort();
+                case "quest+diary":
+                    levelsList = miningQuests.concat(miningDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -417,8 +417,8 @@ function getSkill(skillName) {
                     levelsList = prayerQuests;
                     break;
                     
-                default:
-                    levelsList = prayerQuests.concat(prayerDiary).sort();
+                case "quest+diary":
+                    levelsList = prayerQuests.concat(prayerDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -433,8 +433,8 @@ function getSkill(skillName) {
                     levelsList = rangedQuests;
                     break;
                     
-                default:
-                    levelsList = rangedQuests.concat(rangedDiary).sort();
+                case "quest+diary":
+                    levelsList = rangedQuests.concat(rangedDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -449,8 +449,8 @@ function getSkill(skillName) {
                     levelsList = runecraftQuests;
                     break;
                     
-                default:
-                    levelsList = runecraftQuests.concat(runecraftDiary).sort();
+                case "quest+diary":
+                    levelsList = runecraftQuests.concat(runecraftDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -465,8 +465,8 @@ function getSkill(skillName) {
                     levelsList = slayerQuests;
                     break;
                     
-                default:
-                    levelsList = slayerQuests.concat(slayerDiary).sort();
+                case "quest+diary":
+                    levelsList = slayerQuests.concat(slayerDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -481,8 +481,8 @@ function getSkill(skillName) {
                     levelsList = smithingQuests;
                     break;
                     
-                default:
-                    levelsList = smithingQuests.concat(smithingDiary).sort();
+                case "quest+diary":
+                    levelsList = smithingQuests.concat(smithingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -497,8 +497,8 @@ function getSkill(skillName) {
                     levelsList = strengthQuests;
                     break;
                     
-                default:
-                    levelsList = strengthQuests.concat(strengthDiary).sort();
+                case "quest+diary":
+                    levelsList = strengthQuests.concat(strengthDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -513,8 +513,8 @@ function getSkill(skillName) {
                     levelsList = thievingQuests;
                     break;
                     
-                default:
-                    levelsList = thievingQuests.concat(thievingDiary).sort();
+                case "quest+diary":
+                    levelsList = thievingQuests.concat(thievingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
@@ -529,121 +529,70 @@ function getSkill(skillName) {
                     levelsList = woodcuttingQuests;
                     break;
                     
-                default:
-                    levelsList = woodcuttingQuests.concat(woodcuttingDiary).sort();
+                case "quest+diary":
+                    levelsList = woodcuttingQuests.concat(woodcuttingDiary).sort(function(a, b){return a - b});
                     break;
             }   
             break;
-        
-        
-//    } else if (skillName == "Construction") {
-//        levelsList = constructionList;
-//    } else if (skillName == "Cooking") {
-//        levelsList = cookingList;
-//    } else if (skillName == "Crafting") {
-//        levelsList = craftingList;
-//    } else if (skillName == "Defence") {
-//        levelsList = defenceList;
-//    } else if (skillName == "Farming") {
-//        levelsList = farmingList;
-//    } else if (skillName == "Firemaking") {
-//        levelsList = firemakingList;
-//    } else if (skillName == "Fishing") {
-//        levelsList = fishingList;
-//    } else if (skillName == "Fletching") {
-//        levelsList = fletchingList;
-//    } else if (skillName == "Herblore") {
-//        levelsList = herbloreList;
-//    } else if (skillName == "Hitpoints") {
-//        levelsList = hitpointsList;
-//    }  else if (skillName == "Hunter") {
-//        levelsList = hunterList;
-//    }   else if (skillName == "Magic") {
-//        levelsList = magicList;
-//    } else if (skillName == "Mining") {
-//        levelsList = miningList;
-//    } else if (skillName == "Prayer") {
-//        levelsList = prayerList;
-//    } else if (skillName == "Ranged") {
-//        levelsList = rangedList;
-//    } else if (skillName == "Runecraft") {
-//        levelsList = runecraftList;
-//    } else if (skillName == "Slayer") {
-//        levelsList = slayerList;
-//    } else if (skillName == "Smithing") {
-//        levelsList = smithingList;
-//    } else if (skillName == "Strength") {
-//        levelsList = strengthList;
-//    } else if (skillName == "Thieving") {
-//        levelsList = thievingList;
-//    } else if (skillName == "Woodcutting") {
-//        levelsList = woodcuttingList;
-//    }
-    }
+            
+        }
 
 	return levelsList;
 }
+        
+        
 
 
 function writeAllValues(skillName) {
     var mainValues = mainProgram(skillName);
     var requiredLevel = mainValues[0];
     var task = mainValues[1];
+    var extra = mainValues[2];
+    var TTL = calculateTTL(skillName);
     
     var xpRequired = numberWithCommas(betweenTwoLevels(getCurrentLevel(), requiredLevel));
     
     document.getElementsByTagName("p")[0].innerHTML="Train " + skillName + " to level " +"<span style='background-color:#447050; color:white; font-weight:bold; padding:2px; border-radius:6px;'>"+ requiredLevel+"</span>" + " for " + task;
     
     document.getElementsByTagName("p")[1].innerHTML="EXP required: " + xpRequired;
-    
-    
-    var TTL = calculateTTL(skillName);
         
     document.getElementsByTagName("p")[2].innerHTML="Estimated TTL: " + TTL;
+    
+    
+    document.getElementById("testing").innerHTML=extra;
+
 }
 
 
 function mainProgram(skillName) {
     var currentLevel = getCurrentLevel();
-    
-    
     var skillName = skillName;
     
     var requiredLevel;
 	var i;
     var levelsList = getSkill(skillName);
+    var task;
+    var extra;
     
 	for (i = 0; i < levelsList.length; i++) {
         levelsListIndex = levelsList[i]
         levelsListTupleIndex0 = levelsListIndex[0];     // skill-level
-        levelsListTupleIndex1 = levelsListIndex[1];     // task name
+        levelsListTupleIndex1 = levelsListIndex[1];     // quest or diary task
+        levelsListTupleIndex2 = levelsListIndex[2];     // extra diary info
 
         if (currentLevel < levelsListTupleIndex0) {
         requiredLevel = levelsListTupleIndex0;
-        var task = levelsListTupleIndex1;
+        task = levelsListTupleIndex1;
+        extra  = levelsListTupleIndex2;
 		break;
         }
     }  
     
-//    document.getElementsByTagName("p")[0].innerHTML="Train " + skillName + " to level " + requiredLevel + " for " + task;
     
-//document.getElementsByTagName("p")[2].innerHTML="Estimated TTL " + calculateTTL(skillName, currentLevel);
+    return [requiredLevel, task, extra];
 
-//    writeTTL();
-
-//    
-//    betweenTwoLevels(currentLevel, requiredLevel);
-    
-    //calculateTTL();
-    
-    return [requiredLevel, task];
     
 }
-
-function writeRequiredLevel() {
-        document.getElementsByTagName("p")[0].innerHTML="Train " + skillName + " to level " + mainProgram() + " for " + task;
-}
-
 
 
 function calculateXP(targetLevel)
@@ -696,44 +645,43 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
 
     // AGILITY
 
-    p1 = [10, "The Dig Site"];
-    p2 = [13, "The Lost Tribe"];
-    p3 = [15, "Haunted Mine"];
-    p4 = [15, "Tai Bwo Wannai Trio"];
-    p5 = [15, "Troll Stronghold"];
-    p6 = [18, "The Depths of Despair"];
-    p7 = [20, "Mountain Daughter"];
-    p8 = [23, "Death to the Dorgeshuun"];
-    p9 = [25, "Ghosts Ahoy"];
+    p1 = [10, "The Dig Site","Hello"];
+    p2 = [13, "The Lost Tribe",""];
+    p3 = [15, "Haunted Mine",""];
+    p4 = [15, "Tai Bwo Wannai Trio",""];
+    p5 = [15, "Troll Stronghold",""];
+    p6 = [18, "The Depths of Despair",""];
+    p7 = [20, "Mountain Daughter",""];
+    p8 = [23, "Death to the Dorgeshuun",""];
+    p9 = [25, "Ghosts Ahoy",""];
     p10 = [25, "The Grand Tree"];
-    p11 = [25, "In Search of the Myreque"];
-    p12 = [25, "Watchtower"];
-    p13 = [26, "Darkness of Hallowvale"];
-    p14 = [28, "Troll Romance"];
-    p15 = [30, "Cold War"];
-    p16 = [32, "Shilo Village"];
-    p17 = [35, "Horror from the Deep"];
-    p18 = [36, "One Small Favour"];
-    p19 = [40, "The Fremennik Isles"];
-    p20 = [40, "Royal Trouble"];
-    p21= [42, "Cabin Fever"];
-    p22 = [48, "Recipe for Disaster - Awowogei subquest"];
-    p23 = [50, "Legend's Quest"];
-    p24 = [55, "Monkey Madness II"];
-    p25 = [56, "Regicide"];
-    p26 = [59, "Grim Tales"];
-    p27 = [60, "Dragon Slayer II"];
-    p28 = [68, "Making Friends with My Arm"];
-    p29 = [70, "Song of the Elves"];
-    p30 = [99, "Skillcape"];
+    p11 = [25, "In Search of the Myreque",""];
+    p12 = [25, "Watchtower",""];
+    p13 = [26, "Darkness of Hallowvale",""];
+    p14 = [28, "Troll Romance",""];
+    p15 = [30, "Cold War",""];
+    p16 = [32, "Shilo Village",""];
+    p17 = [35, "Horror from the Deep",""];
+    p18 = [36, "One Small Favour",""];
+    p19 = [40, "The Fremennik Isles",""];
+    p20 = [40, "Royal Trouble",""];
+    p21= [42, "Cabin Fever",""];
+    p22 = [48, "Recipe for Disaster - Awowogei subquest",""];
+    p23 = [50, "Legend's Quest",""];
+    p24 = [55, "Monkey Madness II",""];
+    p25 = [56, "Regicide",""];
+    p26 = [59, "Grim Tales",""];
+    p27 = [60, "Dragon Slayer II",""];
+    p28 = [68, "Making Friends with My Arm",""];
+    p29 = [70, "Song of the Elves",""];
+    p30 = [99, "Skillcape",""];
 
     var agilityQuests = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30];
     agilityQuests = agilityQuests.sort();
 
     var agilityDiary = [
-        [5,"Falador - Easy","Climb over the western Falador wall."],
-        [8,"Lumbridge & Draynor - Medium","Grapple across the River Lum."],
-        [10,"Karamja - Easy"],
+        [9, "Falador - Easy", "Climb over the western Falador wall"],
+        [10,"Karamja - Easy","fgdgfdfgdfgdf"],
         [10,"Lumbridge & Draynor - Easy"],
         [11,"Falador - Medium"],
         [12, "Karamja - Medium"],
@@ -768,28 +716,27 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [80,"Falador - Elite"],
         [80,"Fremennik - Elite"],
         [85,"Western Provinces - Elite"],
-        [90,"Ardougne - Elite"],  
-    ].sort();
+        [90,"Ardougne - Elite"] 
+    ].sort(function(a, b){return a - b});
 
     // ATTACK 
 
-    p31 = [15, "Another slice of HAM"];
-    p32 = [20, "Holy Grail"];
-    p33 = [40, "A Taste of Hope"];
-    p34 = [42, "Western Provinces - Elite"];
-    p35 = [50, "Another slice of HAM"];
-    p36 = [99, "Skillcape"];
+    p31 = [15, "Another slice of HAM",""];
+    p32 = [20, "Holy Grail",""];
+    p33 = [40, "A Taste of Hope",""];
+    p34 = [42, "Western Provinces - Elite",""];
+    p35 = [50, "Another slice of HAM",""];
+    p36 = [99, "Skillcape",""];
 
     var attackQuests = [p31,p32,p33,p34,p35,p36];
-    attackQuests = attackQuests.sort();
+    attackQuests = attackQuests.sort(function(a, b){return a - b});
 
 
     var attackDiary = [
         [50, "Ardougne - Medium", "Equip an Iban's upgraded staff or upgrade an Iban's staff."],
         [42, "Western Provinces - Elite", "Equip any complete void set."],
         [99, "Falador - Hard", "Enter the Warriors' Guild."],
-    ].sort();
-
+    ].sort(function(a, b){return a - b});
 
 	// CONSTRUCTION
     p37 = [5, "Darkness of Hallowvale"];
@@ -804,7 +751,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
     p46 = [99, "Skillcape"];
 
     var constructionQuests = [p37,p38,p39,p40,p41,p42,p43,p44,p45,p46];
-    constructionQuests = constructionQuests.sort();
+    constructionQuests = constructionQuests.sort(function(a, b){return a - b});
 
     // COOKING 
 
@@ -822,7 +769,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [62, "Swan Song"],
         [70, "Recipe for Disaster - Awowogei subquest*"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
 
     // CRAFTING 
@@ -862,7 +809,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [65, "The Fremennik Exiles"],
         [70,"Monkey Madness II"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     // DEFENCE
 
@@ -872,7 +819,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [40,"Lunar Diplomacy"],
         [65,"King's Ransom"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     // FARMING 
     var farmingQuests = [
@@ -885,7 +832,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [49,"Fairytale II - Cure a Queen*"],
         [70,"Song of the Elves"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     // FIREAMKING
     var firemakingQuests = [
@@ -903,7 +850,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [60,"Monkey Madness II*"],
         [66,"Making Friends with My Arm"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     // FISHING
     var fishingQuests = [
@@ -914,7 +861,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [60,"The Fremennik Exiles"],
         [62,"Swan Song*"],
         [99, "Skillcape (provides unlimited teleports to either the Fishing Guild or Otto's Grotto)"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var fletchingQuests = [
         [5,"Big Chompy Bird Hunting"],
@@ -923,7 +870,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [30,"Zogre Flesh Eaters"],
         [50,"Devious Minds"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var herbloreQuests = [
         [3,"Jungle Potion"],
@@ -940,7 +887,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [57,"Fairytale II - Cure a Queen*"],
         [70,"Song of the Elves"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var hitpointsQuests = [[50,"Dragon Slayer II"], [99, "Skillcape"]];
 
@@ -951,7 +898,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [60,"Monkey Madness II"],
         [70," Song of the Elves"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var magicQuests = [
         [7,"In Aid of the Myreque"],
@@ -970,7 +917,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [66,"Swan Song*"],
         [75,"Dragon Slayer II"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var miningQuests = [
         [10,"The Knight's Sword"],
@@ -990,7 +937,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [70,"Song of the Elves"],
         [72,"Making Friends with My Arm*"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var prayerQuests = [
         [25, "Another Slice of H.A.M."],
@@ -1000,7 +947,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [47,"Rum Deal*"],
         [50,"The Great Brain Robbery"],
         [99,"Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var rangedQuests = [
         [25,"Underground Pass"],
@@ -1012,7 +959,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [40,"Temple of Ikov"],
         [60,"Mourning's End Part I"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var runecraftQuests = [
         [13,"The Eyes of Glouphrie"],
@@ -1021,7 +968,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [50,"Devious Minds"],
         [55,"The Fremennik Exiles"],
         [99,"Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var slayerQuests = [
         [10,"Desert Treasure"],
@@ -1034,7 +981,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [60,"The Fremennik Exiles"],
         [69,"Monkey Madness II"],
         [99,"Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var smithingQuests = [
         [4,"Zogre Flesh Eaters"],
@@ -1052,14 +999,14 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [70,"Dragon Slayer II"],
         [70,"Song of the Elves"],
         [99,"Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var strengthQuests = [
         [20,"Zogre Flesh Eaters"],
         [40,"Darkness of Hallowvale"],
         [50,"Legends' Quest"],
         [99,"Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var thievingQuests = [
         [13,"The Lost Tribe"],
@@ -1085,7 +1032,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [58,"Grim Tales*"],
         [60,"Dragon Slayer II"],
         [99,"Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
 
     var woodcuttingQuests = [
         [10,"My Arm's Big Adventure"],
@@ -1099,4 +1046,4 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [70,"Song of the Elves"],
         [71,"Grim Tales*"],
         [99, "Skillcape"]
-    ].sort();
+    ].sort(function(a, b){return a - b});
