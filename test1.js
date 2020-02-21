@@ -14,8 +14,14 @@ function setList() {
 
 
 function mark(id) {
-    //document.getElementsByClassName("icon").style.backgroundColor = "black";
-    document.getElementById(id).style.backgroundColor = "#e6e6c1";
+    var images = document.getElementsByTagName("td");
+    var i;
+    for (i = 0; i < images.length; i++) {
+        images[i].style.border = "1px solid black";
+    }
+    
+    
+    document.getElementById(id).style.border = "4px solid yellow";
     
 }
 
