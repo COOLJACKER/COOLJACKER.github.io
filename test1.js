@@ -119,13 +119,21 @@ function getCurrentLevel() {
 
 
 function calculateAllSkills() {
+    
     var arrayThatHoldsAllLevels = [];
     var i;
     for (i = 0; i < listOfSkills.length; i++) {
         var skill = listOfSkills[i];
-        arrayThatHoldsAllLevels[i] = mainProgram(skill);
+        var output = mainProgram(skill);
+        var reqLvl = output[0];
+        var task = output[1];
+        
+        
+        arrayThatHoldsAllLevels[i] = [reqLvl,skill,task];
     }
-    alert(arrayThatHoldsAllLevels);
+    arrayThatHoldsAllLevels = arrayThatHoldsAllLevels.sort();
+    return arrayThatHoldsAllLevels[0];
+
 }
 
 
@@ -563,6 +571,7 @@ function writeAllValues(skillName) {
     var task = mainValues[1];
     var extra = mainValues[2];
     var TTL = calculateTTL(skillName);
+    var lowest = calculateAllSkills();
     
     var xpRequired = numberWithCommas(betweenTwoLevels(getCurrentLevel(), requiredLevel));
     
@@ -573,6 +582,9 @@ function writeAllValues(skillName) {
     document.getElementsByTagName("p")[2].innerHTML="Estimated TTL: " + TTL;
     
     document.getElementById("testing").innerHTML=extra;
+    
+//    document.getElementById("lowest-level").innerHTML="Train "+lowest[1]+" to "+lowest[0]+" for "+lowest[2];
+
 
 }
 
@@ -962,6 +974,30 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
 
+
+    var firemakingDiary = [
+        [15,"Fremennik - Easy"],
+        [15,"Lumbridge & Draynor - Easy"],
+        [30,"Falador - Medium"],
+        [35,"Western Provinces - Medium"],
+        [40,"Varrock - Medium"],
+        [49,"Falador - Medium"],
+        [50,"Ardougne - Medium"],
+        [50,"Kourend & Kebos - Medium"],
+        [50,"Morytania - Hard"],
+        [50,"Western Provinces - Hard"],
+        [60,"Desert - Hard"],
+        [60,"Varrock - Hard"],
+        [65,"Kandarin - Hard"],
+        [65,"Lumbridge & Draynor - Hard"],
+        [75,"Wilderness - Elite","Cut and burn some Magic logs in the Resource Area"],
+        [80,"Morytania - Elite","Cremate any Shade remains on a Magic pyre"],
+        [85,"Kandarin - Elite","Construct a pyre ship from Magic logs"]
+        
+    ];
+
+
+
     // FISHING
     var fishingQuests = [
         [5,"Tai Bwo Wannai Trio"],
@@ -973,6 +1009,30 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape (provides unlimited teleports to either the Fishing Guild or Otto's Grotto)"]
     ].sort(function(a, b){return a - b});
 
+    var fishingDiary = [
+        [15,"Lumbridge & Draynor - Easy"],
+        [15,"Ardougne - Easy"],
+        [16,"Kandarin - Easy"],
+        [20,"Kourend & Kebos - Easy"],
+        [20,"Varrock - Easy"],
+        [30,"Lumbridge & Draynor - Medium"],
+        [43,"Kourend & Kebos - Medium"],
+        [46,"Kandarin - Medium"],
+        [46,"Western Provinces - Medium"],
+        [53,"Wilderness - Hard"],
+        [62,"Western Provinces - Hard"],
+        [65,"Karamja - Medium"],
+        [70,"Kandarin - Hard","Catch a Leaping sturgeon"],
+        [76,"Kandarin - Elite","Fish and cook 5 Sharks in Catherby using the Cooking gauntlets"],
+        [81,"Ardougne - Elite","Catch a manta ray in the Fishing Trawler and cook it in Port Khazard"],
+        [82,"KOurend & Kebos - Elite","Catch an anglerfish and cook it whilst in Great Kourend."],
+        [85,"Wilderness - Elite","Fish and cook a Dark crab in the Resource Area"],
+        [96,"Morytania - Elite","	Catch a Shark in Burgh de Rott with your bare hands"]
+        
+    ];
+
+
+
     var fletchingQuests = [
         [5,"Big Chompy Bird Hunting"],
         [10,"The Tourist Trap"],
@@ -981,6 +1041,21 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [50,"Devious Minds"],
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var fletchingDiary = [
+        [5,"Western Provinces - Various"],
+        [20,"Western Provinces - Easy"],
+        [40,"Kourend & Kebos - Elite"],
+        [50,"Kandarin - Medium"],
+        [69,"Ardougne - Elite"],
+        [70,"Kandarin - Hard"],
+        [81,"Varrock - Elite"],
+        [85,"Western Provinces - Elite"],
+        [95,"Desert - Elite"]
+    ];
+
+
+
 
     var herbloreQuests = [
         [3,"Jungle Potion"],
@@ -999,7 +1074,22 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
 
+    var herbloreDiary = [
+        [12,"Kourend & Kebos - Easy"],
+        [22,"Morytania - Medium"],
+        [36,"Desert - Medium"],
+        [48,"Kandarin - Medium"],
+        [66,"Fremennik - Hard"],
+        [81,"Falador - Elite"],
+        [86,"Kandarin - Elite"],
+        [87,"Karamja - Elite"],
+        [90,"Varrock - Eite"]
+        
+    ];
+
+
     var hitpointsQuests = [[50,"Dragon Slayer II"], [99, "Skillcape"]];
+    var hitpointsDiary =[[70,"Fremennik - Elite"]];
 
     var hunterQuests = [
         [10,"Cold War"],
@@ -1009,6 +1099,26 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [70," Song of the Elves"],
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var hunterDiary = [
+        [5,"Desert - Easy"],
+        [9,"Western Provinces - Easy"],
+        [11,"Fremennik - Easy"],
+        [29,"Morytania - Medium"],
+        [31,"Western Provinces - Medium"],
+        [35,"Fremennik - Medium"],
+        [35,"Kourend & Kebos - Medium"],
+        [41,"Karamja - Medium"],
+        [42,"Lumbridge & Draynor - Medium"],
+        [47,"Desert - Medium"],
+        [53,"Kourend & Kebos - Medium"],
+        [55,"Fremennik - Hard"],
+        [59,"Ardougne - Hard"],
+        [66,"Varrock - Hard"],
+        [67,"Wilderness - Hard"],
+        [69,"Western Provinces - Hard"]
+        
+    ];
 
     var magicQuests = [
         [7,"In Aid of the Myreque"],
@@ -1028,6 +1138,45 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [75,"Dragon Slayer II"],
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var magicDiary = [
+        [21,"Wilderness	Easy"],
+        [25,"Varrock	Medium"],
+        [31,"Lumbridge & Draynor	Medium"],
+        [33,"Falador	Medium"],
+        [37,"Falador	Medium"],
+        [45,"Kandarin	Medium"],
+        [49,"Varrock	Medium"],
+        [50,"Ardougne	Medium"],
+        [51,"Ardougne	Medium"],
+        [54,"Varrock	Hard"],
+        [56,"Kandarin	Hard"],
+        [57,"Lumbridge & Draynor	Hard"],
+        [58,"Ardougne	Hard"],
+        [60,"Lumbridge & Draynor	Hard"],
+        [60,"Wilderness	Medium"],
+        [60,"Wilderness	Hard"],
+        [61,"Fremennik	Hard"],
+        [64,"Western Provinces	Hard"],
+        [66,"Ardougne	Hard"],
+        [66,"Kourend & Kebos	Hard"],
+        [66,"Morytania	Hard"],
+        [66,"Wilderness	Hard"],
+        [68,"Desert	Hard"],
+        [72,"Fremennik	Hard"],
+        [83,"Morytania	Elite"],
+        [86,"Varrock	Elite"],
+        [87,"Kandarin	Elite"],
+        [90,"Kourend & Kebos	Elite"],
+        [94,"Ardougne	Elite"],
+        [94,"Desert	Elite"],
+        [96,"Wilderness	Elite"]
+        
+    ];
+
+
+
+
 
     var miningQuests = [
         [10,"The Knight's Sword"],
@@ -1049,6 +1198,36 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
 
+    var miningDiary = [
+        [10,"Falador	Easy"],
+        [15,"Kourend & Kebos	Easy"],
+        [15,"Lumbridge & Draynor	Easy"],
+        [15,"Varrock	Easy"],
+        [15,"Wilderness	Easy"],
+        [15,"Western Provinces	Easy"],
+        [23,"	Fremennik	Easy"],
+        [30,"Fremennik	Medium"],
+        [30,"Kandarin	Medium"],
+        [38,"Kourend & Kebos	Elite"],
+        [40,"Falador	Medium"],
+        [40,"Fremennik	Medium"],
+        [40,"Karamja	Easy"],
+        [40,"Karamja	Medium"],
+        [40,"Western Provinces	Medium"],
+        [42,"Kourend & Kebos	Medium"],
+        [45,"Desert	Hard"],
+        [52,"Karamja	Hard"],
+        [55,"Wilderness	Medium"],
+        [55,"Morytania	Hard"],
+        [60,"Falador	Hard"],
+        [65,"Kourend & Kebos	Hard"],
+        [70,"Fremennik	Hard"],
+        [70,"Western Provinces	Hard"],
+        [85,"Wilderness	Elite","	Smith a Rune scimitar from scratch in the Resource Area"],  
+    ];
+
+
+
     var prayerQuests = [
         [25, "Another Slice of H.A.M."],
         [31,"Scorpion Catcher"],
@@ -1058,6 +1237,16 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [50,"The Great Brain Robbery"],
         [99,"Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var prayerDiary = [
+        [10,"Falador	Medium"],
+        [52,"	Lumbridge & Draynor	Hard"],
+        [52,"Varrock	Hard"],
+        [70,"Falador	Hard"],
+        [70,"Kandarin	Hard"],
+        [70,"Morytania	Hard"],
+        [85,"Desert	Elite"]
+    ];
 
     var rangedQuests = [
         [25,"Underground Pass"],
@@ -1071,6 +1260,18 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
 
+    var rangedDiary = [
+        [30,"Western Provinces	Various"],
+        [40,"Kandarin	Medium"],
+        [50,"Lumbridge & Draynor	Medium	"],
+        [70,"Fremennik	Elite"],
+        [70,"Lumbridge & Draynor	Elite"],
+        [70,"Western Provinces	Hard"]
+    ];
+
+
+
+
     var runecraftQuests = [
         [13,"The Eyes of Glouphrie"],
         [30,"The Slug Menace"],
@@ -1079,6 +1280,25 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [55,"The Fremennik Exiles"],
         [99,"Skillcape"]
     ].sort(function(a, b){return a - b});
+
+
+    var runecraftDiary = [
+        [5,"Lumbridge & Draynor	Easy"],
+        [9,"Varrock	Easy"],
+        [23,"Lumbridge & Draynor	Medium"],
+        [44,"Karamja	Hard"],
+        [56,"Falador	Hard"],
+        [59,"	Lumbridge & Draynor	Hard"],
+        [65,"Ardougne	Hard"],
+        [76,"Lumbridge & Draynor	Elite"],
+        [77,"Kourend & Kebos	Elite"],
+        [78,"Varrock	Elite"],
+        [82,"Fremennik	Elite"],
+        [88,"Falador	Elite"],
+        [91,"Karamja	Elite"]
+    ];
+
+
 
     var slayerQuests = [
         [10,"Desert Treasure"],
@@ -1092,6 +1312,32 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [69,"Monkey Madness II"],
         [99,"Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var slayerDiary = [
+        [7,"Lumbridge & Draynor	Easy"],
+        [15,"Morytania	Easy"],
+        [22,"Desert	Medium"],
+        [32,"Falador	Medium"],
+        [40,"Morytania	Medium"],
+        [42,"Morytania	Medium"],
+        [47,"Fremennik	Medium"],
+        [50,"Karamja	Hard"],
+        [50,"Wilderness	Medium"],
+        [58,"Morytania	Hard"],
+        [62,"Kourend & Kebos	Hard"],
+        [65,"Desert	Hard"],
+        [68,"Wilderness	Hard"],
+        [72,"Falador	Hard"],
+        [83,"Fremennik	Elite"],
+        [83,"Wilderness	Elite"],
+        [85,"Morytania	Elite"],
+        [93,"Western Provinces	Elite","Kill the thermonuclear smoke devil"],
+        [95,"	Kourend & Kebos	Elite","Kill a hydra in the Karuulm Slayer Dungeon."]
+        
+    ];
+
+
+
 
     var smithingQuests = [
         [4,"Zogre Flesh Eaters"],
@@ -1111,12 +1357,42 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99,"Skillcape"]
     ].sort(function(a, b){return a - b});
 
+    var smithingDiary = [
+        [13,"Falador	Easy"],
+        [35,"Morytania	Medium"],
+        [50,"Wilderness	Medium"],
+        [60,"Ardougne	Hard"],
+        [60,"Fremennik	Hard"],
+        [68,"Ardougne	Hard"],
+        [68,"Desert	Hard"],
+        [70,"Kourend & Kebos	Hard"],
+        [75,"Kandarin	Hard"],
+        [75,"Wilderness	Hard"],
+        [88,"Lumbridge & Draynor	Elite","Smith an Adamant platebody down Draynor sewer"],
+        [89,"Varrock	Elite","Smith and fletch 10 Rune darts within Varrock"],
+        [90,"Kandarin	Elite","Smith a Rune hasta at Otto's Grotto"],
+        [91,"Ardougne	Elite","Make a Rune crossbow yourself from scratch within Witchaven or Yanille"]
+        
+    ];
+
     var strengthQuests = [
         [20,"Zogre Flesh Eaters"],
         [40,"Darkness of Hallowvale"],
         [50,"Legends' Quest"],
         [99,"Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var strengthDiary = [
+        [45,"Desert	Medium"],
+        [45,"Kandarin	Hard"],
+        [50,"Kandarin	Hard"],
+        [50,"Karamja	Hard"],
+        [60,"Wilderness	Medium"],
+        [60,"Wilderness	Elite"],
+        [70,"Fremennik	Elite"],
+        [70,"Lumbridge & Draynor	Elite"],
+        [76,"Morytania	Elite"]
+    ];
 
     var thievingQuests = [
         [13,"The Lost Tribe"],
@@ -1144,6 +1420,34 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [99,"Skillcape"]
     ].sort(function(a, b){return a - b});
 
+
+    var thievingDiary = [
+        [5,"Ardougne	Easy"],
+        [5,"Fremennik	Easy"],
+        [5,"Varrock	Easy"],
+        [21,"Desert	Easy"],
+        [25,"Desert	Medium"],
+        [25,"Kourend & Kebos	Easy"],
+        [38,"Ardougne	Medium"],
+        [38,"Lumbridge & Draynor	Medium"],
+        [40,"Falador	Medium"],
+        [42,"Fremennik	Medium"],
+        [47,"Kandarin	Medium"],
+        [49,"Kourend & Kebos	Hard"],
+        [50,"Falador	Hard"],
+        [50,"Karamja	Hard"],
+        [65,"Desert	Hard	"],
+        [72,"Ardougne	Hard"],
+        [75,"Fremennik	Hard"],
+        [75,"Western Provinces	Hard"],
+        [78,"Lumbridge & Draynor	Elite"],
+        [80,"Ardougne	Elite"],
+        [82,"Ardougne	Elite"],
+        [84,"Wilderness	Elite"],
+        [85,"Western Provinces	Elite"],
+        [91,"Desert	Elite"]
+    ];
+
     var woodcuttingQuests = [
         [10,"My Arm's Big Adventure"],
         [35,"Animal Magnetism"],
@@ -1157,3 +1461,39 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [71,"Grim Tales*"],
         [99, "Skillcape"]
     ].sort(function(a, b){return a - b});
+
+    var woodcuttingDiary = [
+        [10,"Karamja	Medium"],
+        [15,"Fremennik	Easy"],
+        [15,"Lumbridge & Draynor	Easy"],
+        [15,"Karamja	Hard"],
+        [15,"Karamja	Hard"],
+        [30,"Falador	Medium"],
+        [30,"Lumbridge & Draynor	Medium"],
+        [35,"Desert	Medium"],
+        [35,"Karamja	Medium"],
+        [35,"Western Provinces	Medium"],
+        [45,"Morytania	Medium"],
+        [50,"Morytania	Hard"],
+        [50,"Karamja	Medium"],
+        [50,"	Kourend & Kebos	Medium"],
+        [50,"Western Provinces	Hard"],
+        [56,"Fremennik	Hard"],
+        [57,"Lumbridge & Draynor	Hard"],
+        [57,"Varrock	Hard"],
+        [60,"Kandarin	Hard"],
+        [60,"Kourend & Kebos	Hard"],
+        [60,"Varrock	Hard"],
+        [60,"Varrock	Hard"],
+        [61,"Wilderness	Medium"],
+        [75,"Lumbridge & Draynor	Elite","Chop some Magic logs at the Mage Training Arena"],
+        [75,"Wilderness	Elite","Cut and burn some Magic logs in the Resource Area"],
+        [75,"Falador	Elite","Find at least 3 Magic roots at once when digging up your Magic tree in Falador"],
+        [90,"Kourend & Kebos	Elite","Chop some redwood logs."]
+        
+    ];
+
+
+
+
+
