@@ -1371,8 +1371,7 @@ var listOfSkills = ["Agility", "Attack", "Construction", "Cooking", "Crafting"
         [88,"Lumbridge & Draynor	Elite","Smith an Adamant platebody down Draynor sewer"],
         [89,"Varrock	Elite","Smith and fletch 10 Rune darts within Varrock"],
         [90,"Kandarin	Elite","Smith a Rune hasta at Otto's Grotto"],
-        [91,"Ardougne	Elite","Make a Rune crossbow yourself from scratch within Witchaven or Yanille"]
-        
+        [91,"Ardougne	Elite","Make a Rune crossbow yourself from scratch within Witchaven or Yanille"]     
     ];
 
     var strengthQuests = [
