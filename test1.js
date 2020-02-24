@@ -11,19 +11,33 @@ function setList() {
     return choice;
 }
 
+function returnCheckedSkill() {
+        var skills = document.getElementsByClassName("radio-skill");
+        var i;
+        var checked;
+        for (i = 0; i < skills.length; i++) {
+            if (skills[i].checked) {
+                checked = skills[i].value;
+            }
+        }
+    return checked;
+    
 
-
-function mark(id) {
-    var images = document.getElementsByTagName("td");
-    var i;
-    for (i = 0; i < images.length; i++) {
-        images[i].style.border = "1px solid black";
     }
-    
-    
-    document.getElementById(id).style.border = "4px solid yellow";
-    
-}
+
+
+
+//function mark(id) {
+//    var images = document.getElementsByTagName("td");
+//    var i;
+//    for (i = 0; i < images.length; i++) {
+//        images[i].style.border = "1px solid black";
+//    }
+//    
+//    
+//    document.getElementById(id).style.border = "4px solid yellow";
+//    
+//}
 
 
 
@@ -177,11 +191,12 @@ function decreaseBy1() {
 }
 
 
-function getSkill(skillName) {
+function getSkill() {
     
     //var skillName = document.getElementById("skills-panel").value;
     var levelsList;
     var choice = setList();
+    var skillName = returnCheckedSkill();
     
     
     switch(skillName) {
@@ -565,8 +580,9 @@ function getSkill(skillName) {
         
 
 
-function writeAllValues(skillName) {
-    var mainValues = mainProgram(skillName);
+function writeAllValues() {
+    var skillName = returnCheckedSkill();
+    var mainValues = mainProgram();
     var requiredLevel = mainValues[0];
     var task = mainValues[1];
     var extra = mainValues[2];
@@ -581,7 +597,7 @@ function writeAllValues(skillName) {
         
     document.getElementsByTagName("p")[2].innerHTML="Estimated TTL: " + TTL;
     
-    document.getElementById("testing").innerHTML=extra;
+    document.getElementById("testing").innerHTML=returnCheckedSkill();
     
 //    document.getElementById("lowest-level").innerHTML="Train "+lowest[1]+" to "+lowest[0]+" for "+lowest[2];
 
@@ -589,13 +605,15 @@ function writeAllValues(skillName) {
 }
 
 
-function mainProgram(skillName) {
+function mainProgram() {
     var currentLevel = getCurrentLevel();
-    var skillName = skillName;
+    var checked = returnCheckedSkill();
+    var skillName = checked;
+
     
     var requiredLevel;
 	var i;
-    var levelsList = getSkill(skillName);
+    var levelsList = getSkill();
     var task;
     var extra;
     
