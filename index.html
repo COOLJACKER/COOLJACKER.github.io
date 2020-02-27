@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
     
-    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
     
 <script src="test1.js">
 </script>
+    
+<!--
+<script src="jquery.js">
+    
+$('#myform').submit(writeAllValues(){
+  writeAllValues();
+});
+    
+    </script>
+-->
 
 <style>
-    
-
-    
     
     body {
         font-family:Arial;
@@ -23,26 +29,46 @@
     }
 
     #app {
-       background-color:#d8ccb4;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        
+        
+        
+        background-color:#d8ccb4;
         border-radius: 3px;
-        border: 1px solid black;
+        padding:0.3em;
+        
+/*        border: 1px solid black;*/
+/*
         width:100%;
         padding:3px;
+*/
 
     
     }   
 
     p {
         background-color:#e2dbc8;
+        border-radius:5px;
+        
+/*
         font-size:1.5em;
         margin-left:10px;
         margin-right:10px;
         border-radius:5px;
         padding:10px;
+*/
     }
 
     #nav {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-content:center;
         background-color:#d8ccb4;
+        border-radius:5px;
 
     }
 
@@ -57,14 +83,22 @@
     
     #help, #contact {
         width:33%;
-        text-align:center
+        text-align:center;
+        display:flex;
+        border-radius:5px;
+
     }
     
     #help:hover, #contact:hover{
         background-color:floralwhite;
     }
     
-    #obama {             
+    #obama {  
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        
+        padding:5px;
         height:6em;
         width:6em;
         border-radius:10%;
@@ -95,6 +129,9 @@
         height:90%;
         width:75%;
         margin:auto;
+        
+        display:flex;
+        flex-direction:column;
 
         
     }
@@ -139,9 +176,15 @@
     }
     
     .add, .sub{
+        width:50%;
+        
+        
+/*
        width:6em; 
         height:3em;
         font-size:1.2em;
+*/
+        
     }
     
     .add {
@@ -175,6 +218,44 @@ input[type='radio'] {
         background-color: black;
     }
     
+    .table {
+        display:table;
+ 
+    }
+    
+    .row {
+        display:table-row;
+    }
+    
+    .cell {
+        display: table-cell;
+    }
+    
+    .column {
+        display:table-column;
+    }
+    
+    #app-text {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        border-radius:5px;
+        background-color:red;
+        
+        font-size:1.3em;
+        
+    }
+    
+    #add/sub-table {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: stretch;
+        background-color:red;
+        
+    }
+    
     
     
     
@@ -187,112 +268,100 @@ input[type='radio'] {
     
 <table>
 
-<tbody  id="nav">
+<div id="nav">
     
-    <tr>
-    <td id="help" onclick="clickedHelp()"><a>Help</a></td>
+    <div id="help" onclick="clickedHelp()"><a>Help</a></div>
     
-    <td>
+    <div id="obama">
         <img id="obama" src="https://pbs.twimg.com/profile_images/763520820547297281/7JsgK1DT_400x400.jpg" />
-    </td>
+    </div>
     
-    <td id="contact" onclick="clickedContact()"><a>Contact</a>
-    </td>
+    <div id="contact" onclick="clickedContact()"><a>Contact</a>
+    </div>
     
-    </tbody>    
-    
-</table>
+</div>
     
     
 <table>
-    <thead>
-    </thead>
-    
    <tbody> 
        <tr>
            <td class="yo">
+               
+               
+               
 <div id="app">
     
+<form id="myform">
+Current Level: <input type="text" id="level" value="1">
+    </form>
+    
+    
+<div id="add/sub-table">
+   
+        <div><input type="button"  class="sub" value="-1" onclick="decreaseBy1(); writeAllValues()"></div>
+        <div><input type="button"  class="add" value="+1" onclick="increaseBy1(); writeAllValues()"></div> 
+        <div><input type="button" class="sub" value="-5" onclick="decreaseBy5(); writeAllValues()"></div> 
+        <div><input type="button" class="add" value="+5" onclick="increaseBy5(); writeAllValues()"></div> 
+    
+</div>    
+    
+    
+
+<div class="table" id="diary-or-quest">   
+    <form action="" id="choose-form">
+        
+        <div class="row">
+            
+        <input type="radio" name="choose" value="quests-only" onclick="setList(this.value)" checked>Quests<br>
+        <input type="radio" name="choose" value="diary-only">Achievement Diaries<br>
+        <input type="radio" name="choose" value="quest+diary">Both
+            
+        </div>
+    
+    </form> 
+</div>
+    
+    
+    
+<div class="table" id="app-text">
+    
+<div class="row">
+    <div class="cell">    
+        <p>Choose a skill to begin</p>
+    </div>    
+</div>
+    
+<div class="row">
+    <div class="cell">    
+        <p>EXP required: </p>
+    </div>    
+</div>
+    
+<div class="row">
+    <div class="cell">    
+        <p id="TTL">Estimated TTL: </p>
+    </div>    
+</div>
+    
+
 <!--
-  Skill: <select id="skills-list" name="">
-    <option value="Agility">Agility</option>
-    <option value="Attack">Attack</option>
-    <option value="Construction">Construction</option>
-    <option value="Cooking">Cooking</option>
-    <option value="Crafting">Crafting</option>
-    <option value="Defence">Defence</option>
-    <option value="Firemaking">Firemaking</option>
-    <option value="Farming">Farming</option>
-    <option value="Fishing">Fishing</option>
-    <option value="Fletching">Fletching</option>
-    <option value="Herblore">Herblore</option>
-    <option value="Hitpoints">Hitpoints</option>
-    <option value="Hunter">Hunter</option>
-    <option value="Magic">Magic</option>
-    <option value="Mining">Mining</option>
-    <option value="Prayer">Prayer</option>
-    <option value="Ranged">Ranged</option>
-    <option value="Runecraft">Runecraft</option>
-    <option value="Slayer">Slayer</option>
-    <option value="Smithing">Smithing</option>
-    <option value="Strength">Strength</option>
-    <option value="Thieving">Thieving</option>
-    <option value="Woodcutting">Woodcutting</option>
-  </select>
--->
-    
-
-Current Level: <input type="text" id="level" value="1" onkeypress="whenEnterPressed(event)">
-    
-    
-<table>
-<tr>    
-    <td>
-        <input type="button"  class="sub" value="-1" onclick="decreaseBy1(); writeAllValues()"> 
-        <input type="button"  class="add" value="+1" onclick="increaseBy1(); writeAllValues()"> 
-    </td>
-    </tr> 
-    
-    <tr>
-        <td>
-
-<input type="button" class="sub" value="-5" onclick="decreaseBy5(); writeAllValues()"> 
-            <input type="button" class="add" value="+5" onclick="increaseBy5(); writeAllValues()"> 
-        </td>
-    </tr>
-    </table>    
-    
-    
-    
-<form action="" id="choose-form">
-  <input type="radio" name="choose" value="quests-only" onclick="setList(this.value)" checked>Quests<br>
-  <input type="radio" name="choose" value="diary-only">Achievement Diaries<br>
-  <input type="radio" name="choose" value="quest+diary">Both
-</form> 
-    
-    
-    
-    
-    
-<input type="submit" style="display: none"/>  
-
-<p>Choose a skill to begin</p>
-
-<p>EXP required: </p>
-
-<p id="TTL">Estimated TTL: </p>
-
 <button id="enter-button" onclick="calculateAllSkills()">
     ALL SKILLS
 </button>
+-->
     
     
 <p style="background-color:white;">How To Use: Enter your current level in the text-field above, then click on a skill icon.</p>
-
+</div>    
+     
+    
 </div>
-           </td>
+               
+ </td>
            
-           <td class="yo">
+<td class="yo">
+               
+               
 <div id="skills-panel">
 
 <table>

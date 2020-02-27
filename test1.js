@@ -1,3 +1,7 @@
+
+
+
+
 function setList() {
     var choices = document.getElementsByName("choose"); 
     var choice;
